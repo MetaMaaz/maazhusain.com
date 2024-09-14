@@ -1,0 +1,4 @@
+h1 { /* This targets all <h1> elements */
+    font-weight: bold; /* Makes the text bold */
+    font-style: italic; /* Makes the text italic */
+}
