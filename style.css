@@ -1,3 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.flag {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.saffron, .white, .green {
+    height: 33.33%;
+    width: 100%;
+}
+
+.saffron {
+    background-color: #FF9933; /* Saffron color */
+}
+
+.white {
+    background-color: #FFFFFF; /* White color */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green {
+    background-color: #138808; /* Green color */
+}
+
+.chakra {
+    width: 80px;
+    height: 80px;
+    border: 5px solid #000080; /* Navy blue color for the chakra */
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.content {
+    text-align: center;
+    color: #000;
+    z-index: 1;
+}
+
 h1 { /* This targets all <h1> elements */
     font-weight: bold; /* Makes the text bold */
     font-style: italic; /* Makes the text italic */
