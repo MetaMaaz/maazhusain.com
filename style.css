@@ -49,6 +49,16 @@ body, html {
     z-index: 1;
 }
 
+.spoke {
+    position: absolute;
+    width: 1px;
+    height: 35px;
+    background-color: #000080;
+    top: 5px;
+    left: 50%;
+    transform-origin: bottom;
+}
+
 .content {
     text-align: center;
     color: #000;
