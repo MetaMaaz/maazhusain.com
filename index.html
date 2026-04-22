@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- Nav -->
 <nav>
-  <span class="nav-logo">mh/</span>
-  <ul class="nav-links">
+  <span class="nav-logo">MH · Portfolio</span>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certs</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><button class="theme-toggle" id="themeBtn">☀ dark</button></li>
+    <li><button class="theme-toggle" id="themeBtn">☀ light</button></li>
   </ul>
 </nav>
 
@@ -28,31 +29,33 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-label reveal">Cybersecurity Analyst</div>
-      <h1 class="hero-name reveal" style="transition-delay:0.08s">Maaz<br/>Husain.</h1>
+      <div class="hero-eyebrow reveal">Cybersecurity Analyst</div>
+      <h1 class="hero-name reveal" style="transition-delay:0.08s">
+        Maaz<br/><em>Husain.</em>
+      </h1>
       <p class="hero-sub reveal" style="transition-delay:0.16s">
         Senior Quality Engineer turned Cybersecurity specialist. 5+ years delivering secure,
         cloud-native applications at enterprise scale. Currently pursuing MSc Cybersecurity
         at the University of Surrey.
       </p>
-      <a href="https://linkedin.com/in/maaz-husain" target="_blank" class="hero-cta reveal" style="transition-delay:0.24s">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" class="hero-cta reveal" style="transition-delay:0.24s">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         Connect on LinkedIn
       </a>
-      <div class="hero-meta reveal" style="transition-delay:0.32s">
-        <div class="hero-stat">
+      <div class="hero-stats reveal" style="transition-delay:0.32s">
+        <div>
           <span class="hero-stat-num">5+</span>
-          <span class="hero-stat-label">years experience</span>
+          <span class="hero-stat-label">years exp.</span>
         </div>
-        <div class="hero-stat">
+        <div>
           <span class="hero-stat-num">7</span>
           <span class="hero-stat-label">certifications</span>
         </div>
-        <div class="hero-stat">
+        <div>
           <span class="hero-stat-num">45%</span>
           <span class="hero-stat-label">reliability lift</span>
         </div>
-        <div class="hero-stat">
+        <div>
           <span class="hero-stat-num">1</span>
           <span class="hero-stat-label">published paper</span>
         </div>
@@ -65,10 +68,10 @@
 <section id="experience">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Work History</div>
-      <h2 class="section-title">Experience</h2>
+      <div class="section-eyebrow">Work History</div>
+      <h2 class="section-title">Experience<em>.</em></h2>
     </div>
-    <hr class="section-divider" />
+    <hr class="divider" />
 
     <div class="exp-item reveal">
       <div class="exp-date">Oct 2020<br/>– Dec 2025</div>
@@ -76,24 +79,12 @@
         <div class="exp-role">Senior Quality Engineer</div>
         <div class="exp-company">LTIMindtree · Mumbai</div>
         <ul class="exp-bullets">
-          <li>Spearheaded QA &amp; cloud deployment for an American Insurance client; achieved 25% reduction in FTE headcount required through process automation.</li>
-          <li>Managed Functional, API and Automation test suites — implemented robust pipeline &amp; API workflows increasing system reliability by <strong>45%</strong>.</li>
-          <li>Led offshore team coordinating with client, improving user experience and cutting requirement turnaround time by 2 days per sprint.</li>
-          <li>Implemented advanced CI/CD optimisations including automatic trigger mechanisms and decoupling across environments — reduced average deployment time by <strong>35%</strong>.</li>
-          <li>Drove a <strong>50% faster</strong> issue resolution rate through proactive support and structured troubleshooting processes.</li>
-          <li>Maintained in-depth technical documentation for cloud infrastructure, APIs and test configurations; streamlined onboarding for new team members.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-date">Jun 2020</div>
-      <div>
-        <div class="exp-role">Research Co-Author</div>
-        <div class="exp-company">Springer / ICICCS 2020</div>
-        <ul class="exp-bullets">
-          <li>Published technical paper on Stock Market Prediction using Machine Learning (LSTM + NLP sentiment analysis) in Intelligent Computing, Information and Control Systems.</li>
-          <li>Achieved ≤30 RMSE on prediction graph with Python, Jupyter Notebook.</li>
+          <li>Spearheaded QA &amp; cloud deployment for an American Insurance client – achieved <strong>25% reduction</strong> in FTE headcount through process automation.</li>
+          <li>Managed Functional, API and Automation test suites; implemented robust pipeline &amp; API workflows increasing system reliability by <strong>45%</strong>.</li>
+          <li>Led offshore team coordinating with client, cutting requirement turnaround by <strong>2 days per sprint</strong>.</li>
+          <li>Implemented CI/CD optimisations including automatic trigger mechanisms and environment decoupling – reduced deployment time by <strong>35%</strong>.</li>
+          <li>Drove a <strong>50% faster</strong> issue resolution rate through structured troubleshooting and proactive support.</li>
+          <li>Maintained in-depth documentation for cloud infrastructure, APIs and test configurations; streamlined team onboarding.</li>
         </ul>
       </div>
     </div>
@@ -104,33 +95,35 @@
 <section id="projects">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Work</div>
-      <h2 class="section-title">Projects</h2>
+      <div class="section-eyebrow">Open Work</div>
+      <h2 class="section-title">Projects<em>.</em></h2>
     </div>
-    <hr class="section-divider" />
-    <div class="skills-grid">
-
-      <a href="https://github.com/MetaMaaz/maazhusain.com" target="_blank" class="skill-card reveal" style="text-decoration:none; display:block;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
-          <div class="skill-card-label" style="margin-bottom:0;">Personal Website</div>
-          <span style="color:var(--accent); font-size:0.75rem; font-family:'DM Mono',monospace;">↗</span>
+    <hr class="divider" />
+    <div class="projects-grid reveal">
+      <a href="https://github.com/MetaMaaz/maazhusain.com" target="_blank" class="project-card">
+        <div class="project-top">
+          <div class="project-name">maazhusain.com</div>
+          <div class="project-arrow">↗</div>
         </div>
-        <div style="font-size:0.85rem; color:var(--fg2); line-height:1.6; margin-bottom:0.9rem;">Portfolio site built with HTML, CSS &amp; JavaScript. Deployed via GitHub Pages on maazhusain.com.</div>
+        <div class="project-desc">Personal portfolio site. Built with HTML, CSS &amp; JavaScript – deployed via GitHub Pages.</div>
         <div class="tags">
           <span class="tag">HTML</span>
           <span class="tag">CSS</span>
           <span class="tag">JavaScript</span>
         </div>
       </a>
-
-      <div class="skill-card reveal" style="border-style: dashed; opacity: 0.6;">
-        <div class="skill-card-label" style="margin-bottom:0.75rem;">Your Next Project</div>
-        <div style="font-size:0.85rem; color:var(--fg2); line-height:1.6; margin-bottom:0.9rem;">Add your next GitHub project here — cybersecurity tool, cloud automation, CTF writeup, etc.</div>
-        <div class="tags">
-          <span class="tag">Coming soon</span>
+      <a href="https://github.com/MetaMaaz/PythonPractice/tree/main/PythonProjects" target="_blank" class="project-card">
+        <div class="project-top">
+          <div class="project-name">Python Projects</div>
+          <div class="project-arrow">↗</div>
         </div>
-      </div>
-
+        <div class="project-desc">A collection of Python projects covering scripting, automation, and data tasks. Built as part of ongoing Python practice.</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Scripting</span>
+          <span class="tag">Automation</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -139,64 +132,64 @@
 <section id="skills">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Capabilities</div>
-      <h2 class="section-title">Skills</h2>
+      <div class="section-eyebrow">Capabilities</div>
+      <h2 class="section-title">Skills<em>.</em></h2>
     </div>
-    <hr class="section-divider" />
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Languages</div>
-        <div class="tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">Python</span>
-          <span class="tag">SQL</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
+    <hr class="divider" />
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <div class="skill-label">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Cloud &amp; DevOps</div>
-        <div class="tags">
-          <span class="tag">Azure DevOps</span>
-          <span class="tag">Azure AD</span>
-          <span class="tag">AWS</span>
-          <span class="tag">CI/CD</span>
+      <div class="skill-card">
+        <div class="skill-label">Cloud &amp; DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Azure DevOps</span>
+          <span class="skill-tag">Azure AD</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">CI/CD</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Testing &amp; QA</div>
-        <div class="tags">
-          <span class="tag">Selenium</span>
-          <span class="tag">TestComplete</span>
-          <span class="tag">API Testing</span>
-          <span class="tag">Test Automation</span>
+      <div class="skill-card">
+        <div class="skill-label">Testing &amp; QA</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">TestComplete</span>
+          <span class="skill-tag">API Testing</span>
+          <span class="skill-tag">Test Automation</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Cybersecurity</div>
-        <div class="tags">
-          <span class="tag">ISC2 CC</span>
-          <span class="tag">Threat Modelling</span>
-          <span class="tag">IAM</span>
-          <span class="tag">Cloud Security</span>
+      <div class="skill-card">
+        <div class="skill-label">Cybersecurity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ISC2 CC</span>
+          <span class="skill-tag">Threat Modelling</span>
+          <span class="skill-tag">IAM</span>
+          <span class="skill-tag">Cloud Security</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Soft Skills</div>
-        <div class="tags">
-          <span class="tag">Team Leadership</span>
-          <span class="tag">Cross-functional</span>
-          <span class="tag">Documentation</span>
-          <span class="tag">Mentoring</span>
+      <div class="skill-card">
+        <div class="skill-label">Leadership</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Team Lead</span>
+          <span class="skill-tag">Mentoring</span>
+          <span class="skill-tag">Cross-functional</span>
+          <span class="skill-tag">Documentation</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-card-label">Machine Learning</div>
-        <div class="tags">
-          <span class="tag">LSTM</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Jupyter</span>
-          <span class="tag">Data Analysis</span>
+      <div class="skill-card">
+        <div class="skill-label">Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">LSTM</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Jupyter</span>
+          <span class="skill-tag">Data Analysis</span>
         </div>
       </div>
     </div>
@@ -207,119 +200,113 @@
 <section id="certs">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Credentials</div>
-      <h2 class="section-title">Certifications</h2>
+      <div class="section-eyebrow">Credentials</div>
+      <h2 class="section-title">Certifications<em>.</em></h2>
     </div>
-    <hr class="section-divider" />
-    <div class="cert-list">
-      <div class="cert-item reveal">
-        <div class="cert-icon">ISC2<br/>CC</div>
+    <hr class="divider" />
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-badge">ISC2<br/>CC</div>
         <div>
           <div class="cert-name">ISC2 Certified in Cybersecurity</div>
-          <div class="cert-body">ISC2</div>
+          <div class="cert-issuer">ISC2</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">AWS<br/>SAA</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">AWS<br/>SAA</div>
         <div>
-          <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
-          <div class="cert-body">Amazon Web Services</div>
+          <div class="cert-name">Solutions Architect – Associate</div>
+          <div class="cert-issuer">Amazon Web Services</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">AZ<br/>400</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br/>400</div>
         <div>
           <div class="cert-name">AZ-400: DevOps Engineer Expert</div>
-          <div class="cert-body">Microsoft Certified</div>
+          <div class="cert-issuer">Microsoft Certified</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">AZ<br/>104</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br/>104</div>
         <div>
-          <div class="cert-name">AZ-104: Azure Administrator Associate</div>
-          <div class="cert-body">Microsoft Certified</div>
+          <div class="cert-name">AZ-104: Azure Administrator</div>
+          <div class="cert-issuer">Microsoft Certified</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">DP<br/>203</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">DP<br/>203</div>
         <div>
-          <div class="cert-name">DP-203: Azure Data Engineer Associate</div>
-          <div class="cert-body">Microsoft Certified</div>
+          <div class="cert-name">DP-203: Azure Data Engineer</div>
+          <div class="cert-issuer">Microsoft Certified</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">DP<br/>900</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">DP<br/>900</div>
         <div>
           <div class="cert-name">DP-900: Azure Data Fundamentals</div>
-          <div class="cert-body">Microsoft Certified</div>
+          <div class="cert-issuer">Microsoft Certified</div>
         </div>
       </div>
-      <div class="cert-item reveal">
-        <div class="cert-icon">AZ<br/>900</div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">AZ<br/>900</div>
         <div>
           <div class="cert-name">AZ-900: Azure Fundamentals</div>
-          <div class="cert-body">Microsoft Certified</div>
+          <div class="cert-issuer">Microsoft Certified</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Education -->
+<!-- Education + Publication -->
 <section id="education">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">Academic Background</div>
-      <h2 class="section-title">Education</h2>
+      <div class="section-eyebrow">Academic</div>
+      <h2 class="section-title">Education<em>.</em></h2>
     </div>
-    <hr class="section-divider" />
-    <div class="edu-list">
-      <div class="edu-item reveal">
+    <hr class="divider" />
+    <div class="edu-list reveal">
+      <div class="edu-item">
         <div>
           <div class="edu-deg">MSc Cybersecurity</div>
           <div class="edu-school">University of Surrey</div>
         </div>
         <div class="edu-year">Feb 2026 – Present</div>
       </div>
-      <div class="edu-item reveal">
+      <div class="edu-item">
         <div>
           <div class="edu-deg">BE Information Technology</div>
           <div class="edu-school">M.H. Saboo Siddik College of Engineering, Mumbai</div>
         </div>
-        <div class="edu-year">Aug 2016 – May 2020</div>
+        <div class="edu-year">2016 – 2020</div>
       </div>
     </div>
 
-    <!-- Publication -->
-    <div style="margin-top: 3rem;">
-      <div class="section-label" style="margin-bottom:0.75rem">Research</div>
-      <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" class="pub-card reveal" style="display:block; text-decoration:none; transition: border-color 0.2s;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
-          <div>
-            <div class="pub-title">Stock Market Prediction using Machine Learning</div>
-            <div class="pub-venue">Springer · ICICCS 2020 · Intelligent Computing, Information and Control Systems</div>
-            <div class="pub-desc">Developed an LSTM model for stock price prediction combined with NLP-based sentiment analysis, achieving ≤30 RMSE. Co-authored with A. Shaikh, A. Panuganti &amp; P. Singh.</div>
-          </div>
-          <div style="flex-shrink:0; color:var(--accent); font-size:0.75rem; font-family:'DM Mono',monospace; white-space:nowrap; padding-top:0.2rem;">↗ SpringerLink</div>
-        </div>
-      </a>
-    </div>
+    <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" class="pub-card reveal">
+      <div class="pub-eyebrow">Research · Springer 2020</div>
+      <div class="pub-title">Stock Market Prediction using Machine Learning</div>
+      <div class="pub-venue">Intelligent Computing, Information and Control Systems · ICICCS 2020</div>
+      <div class="pub-desc">LSTM model for stock price prediction combined with NLP-based sentiment analysis, achieving ≤30 RMSE. Co-authored with A. Shaikh, A. Panuganti &amp; P. Singh. Implemented in Python using Jupyter Notebook.</div>
+      <div class="pub-link">↗ View on SpringerLink</div>
+    </a>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
   <div class="container">
-    <div class="contact-card reveal">
-      <h3>Let's connect.</h3>
-      <p>Open to cybersecurity analyst and cloud security roles. Based in Surrey, UK.</p>
+    <div class="contact-wrap reveal">
+      <div class="contact-eyebrow">Get in touch</div>
+      <h3 class="contact-heading">Open to <em>opportunities.</em></h3>
+      <p class="contact-sub">Cybersecurity analyst and cloud security roles. Based in Surrey, UK.</p>
       <div class="contact-links">
-        <a href="https://linkedin.com/in/maaz-husain" target="_blank" class="contact-link primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" class="contact-btn primary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:maazcdsa@gmail.com" class="contact-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <a href="mailto:maazcdsa@gmail.com" class="contact-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           Email me
         </a>
       </div>
@@ -330,7 +317,10 @@
 <!-- Footer -->
 <footer>
   <div class="container">
-    <span>© 2026 Maaz Husain · maazhusain.com</span>
+    <div class="footer-inner">
+      <span class="footer-text">MAAZ HUSAIN · MAAZHUSAIN.COM · 2026</span>
+      <span class="footer-text">CYBERSECURITY · CLOUD · QA</span>
+    </div>
   </div>
 </footer>
 
@@ -338,28 +328,28 @@
 <div id="tweaks-panel">
   <div class="tweak-title">Tweaks</div>
   <div class="tweak-row">
-    <label class="tweak-label" for="tweak-accent">Accent Color</label>
-    <input type="color" id="tweak-accent" value="#2cb5a0" />
+    <label class="tweak-lbl" for="tweak-accent">Accent Color</label>
+    <input type="color" id="tweak-accent" value="#D97757" />
   </div>
   <div class="tweak-row">
-    <label class="tweak-label" for="tweak-font">Font Size</label>
-    <select id="tweak-font">
-      <option value="15px">Compact</option>
-      <option value="16px" selected>Default</option>
-      <option value="18px">Relaxed</option>
-    </select>
-  </div>
-  <div class="tweak-row">
-    <label class="tweak-label" for="tweak-title">Hero Title</label>
-    <select id="tweak-title">
+    <label class="tweak-lbl" for="tweak-role">Role Title</label>
+    <select id="tweak-role">
       <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
       <option value="Cloud Security Engineer">Cloud Security Engineer</option>
       <option value="DevOps Security Engineer">DevOps Security Engineer</option>
+      <option value="Senior QA Engineer">Senior QA Engineer</option>
+    </select>
+  </div>
+  <div class="tweak-row">
+    <label class="tweak-lbl" for="tweak-serif">Typography</label>
+    <select id="tweak-serif">
+      <option value="'Source Serif 4', Georgia, serif" selected>Source Serif 4</option>
+      <option value="'Playfair Display', Georgia, serif">Playfair Display</option>
+      <option value="Georgia, serif">Georgia</option>
     </select>
   </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

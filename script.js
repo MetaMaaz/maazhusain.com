@@ -1,29 +1,35 @@
-// ── Theme toggle ──
-const btn = document.getElementById('themeBtn');
+// —— Theme toggle ——
+const themeBtn = document.getElementById('themeBtn');
 const html = document.documentElement;
-let dark = false;
-
+let dark = true;
 const saved = localStorage.getItem('mh-theme');
-if (saved === 'dark') { dark = true; html.dataset.theme = 'dark'; btn.textContent = '☀ light'; }
+if (saved === 'light') { dark = false; html.dataset.theme = 'light'; themeBtn.textContent = '☀ dark'; }
 
-btn.addEventListener('click', () => {
+themeBtn.addEventListener('click', () => {
   dark = !dark;
   html.dataset.theme = dark ? 'dark' : 'light';
-  btn.textContent = dark ? '☀ light' : '☀ dark';
+  themeBtn.textContent = dark ? '☀ light' : '☀ dark';
   localStorage.setItem('mh-theme', dark ? 'dark' : 'light');
 });
 
-// ── Scroll reveals ──
-const revealEls = document.querySelectorAll('.reveal');
+// —— Hamburger ——
+const hamburger = document.getElementById('hamburgerBtn');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  hamburger.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.textContent = '☰'; });
+});
+
+// —— Reveal on scroll ——
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); }
-  });
-}, { threshold: 0.12 });
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-revealEls.forEach(el => observer.observe(el));
-
-// ── Tweaks panel ──
+// —— Tweaks ——
 window.addEventListener('message', e => {
   if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').classList.add('open');
   if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('open');
@@ -34,11 +40,9 @@ document.getElementById('tweak-accent').addEventListener('input', e => {
   document.documentElement.style.setProperty('--accent', e.target.value);
   window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accent: e.target.value } }, '*');
 });
-
-document.getElementById('tweak-font').addEventListener('change', e => {
-  document.body.style.fontSize = e.target.value;
+document.getElementById('tweak-role').addEventListener('change', e => {
+  document.querySelector('.hero-eyebrow').textContent = e.target.value;
 });
-
-document.getElementById('tweak-title').addEventListener('change', e => {
-  document.querySelector('.hero-label').textContent = e.target.value;
+document.getElementById('tweak-serif').addEventListener('change', e => {
+  document.documentElement.style.setProperty('--serif', e.target.value);
 });
