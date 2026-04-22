@@ -109,7 +109,7 @@ nav {
   line-height: 1;
 }
 @media (max-width: 680px) {
-  nav { position: static; }
+  nav { position: sticky; top: 0; }
   .nav-hamburger { display: flex; align-items: center; }
   .nav-links {
     display: none;
