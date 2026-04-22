@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/maazhusain/Documents/Cyber security docs/Cloud security/Group project/all Complete/Yaml after adding comments, changing key\\)/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/maazhusain/Documents/Cyber security docs/Cloud security/Group project/all Complete/Yaml after adding comments, changing key)"
+    ]
+  }
+}
