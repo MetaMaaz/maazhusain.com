@@ -109,7 +109,7 @@ nav {
   line-height: 1;
 }
 @media (max-width: 680px) {
-  nav { position: fixed; }
+  nav { position: static; }
   .nav-hamburger { display: flex; align-items: center; }
   .nav-links {
     display: none;
@@ -582,7 +582,7 @@ footer { border-top: 1px solid var(--hairline); padding: 1.5rem 0; }
 @media (max-width: 480px) {
   section { padding: 3.5rem 0; }
   #contact { padding-bottom: 5rem; }
-  #hero { padding-top: 58px; }
+  #hero { padding-top: 0; }
   .hero-inner { padding: 3.5rem 0 3rem; }
   /* Scale hero name with viewport so it never clips on narrow screens */
   h1.hero-name { font-size: clamp(2.2rem, 13vw, 3rem); }
