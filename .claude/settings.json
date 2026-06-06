@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/maazhusain/Documents/Cyber security docs/Cloud security/Group project/all Complete/Yaml after adding comments, changing key\\)/**)"
+      "Read(//Users/maazhusain/Documents/Cyber security docs/Cloud security/Group project/all Complete/Yaml after adding comments, changing key\\)/**)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" status)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" diff index.html)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" log --oneline -5)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" log --oneline origin/main..HEAD)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" log --oneline HEAD..origin/main)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" pull --no-rebase)",
+      "Bash(git -C \"/Users/maazhusain/Documents/My website/maazhusain.com\" push)"
     ],
     "additionalDirectories": [
       "/Users/maazhusain/Documents/Cyber security docs/Cloud security/Group project/all Complete/Yaml after adding comments, changing key)"
