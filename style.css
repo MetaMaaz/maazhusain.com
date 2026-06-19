@@ -440,6 +440,8 @@ section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
   border-radius: 10px;
   padding: 1rem 1.2rem;
   transition: border-color 0.25s;
+  text-decoration: none;
+  color: inherit;
 }
 .cert-card:hover { border-color: var(--accent); }
 .cert-badge {
