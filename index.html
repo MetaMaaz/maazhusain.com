@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
   <meta name="description" content="Maaz Husain — Cybersecurity analyst. DFIR, SOC tooling, cloud security. MSc Cybersecurity, University of Surrey." />
+  <!-- Set theme before first paint so a saved light preference doesn't flash dark.
+       Must stay inline and above the stylesheets. try/catch: localStorage throws in some privacy modes. -->
+  <script>try{if(localStorage.getItem('mh-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
   <!-- Self-hosted fonts: same origin, no third-party handshake. Regenerate with ./fetch-fonts.sh -->
   <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
