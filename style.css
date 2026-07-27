@@ -5,7 +5,7 @@
   --ink:        #E6EDF3;
   --ink-80:     rgba(230,237,243,0.82);
   --ink-60:     rgba(230,237,243,0.58);
-  --muted:      rgba(230,237,243,0.38);
+  --muted:      rgba(230,237,243,0.55); /* 5.46:1 on --bg; below 0.50 fails WCAG AA */
   --hairline:   rgba(0,229,160,0.12);
   --card-bg:    rgba(13,20,28,0.75);
   --accent:     #00E5A0;
@@ -20,10 +20,10 @@
   --ink:        #101820;
   --ink-80:     rgba(16,24,32,0.84);
   --ink-60:     rgba(16,24,32,0.6);
-  --muted:      rgba(16,24,32,0.4);
+  --muted:      rgba(16,24,32,0.62); /* 4.70:1 on --bg; below 0.60 fails WCAG AA */
   --hairline:   rgba(16,24,32,0.12);
   --card-bg:    rgba(255,255,255,0.8);
-  --accent:     #008F64;
+  --accent:     #00734F; /* 5.41:1 on --bg; #008F64 was 3.74:1 */
 }
 
 /* —— Reset —— */

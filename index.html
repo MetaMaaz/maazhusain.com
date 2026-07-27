@@ -6,7 +6,14 @@
   <title>Maaz Husain – Cybersecurity Analyst</title>
   <meta name="description" content="Maaz Husain — Cybersecurity analyst. DFIR, SOC tooling, cloud security. MSc Cybersecurity, University of Surrey." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- ponytail: async-load fonts off the critical path. Self-host the 2 woff2 files if you want to drop the third-party origin entirely. -->
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" />
+  </noscript>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,6 +35,8 @@
     <li><button class="theme-toggle" id="themeBtn">[dark]</button></li>
   </ul>
 </nav>
+
+<main>
 
 <!-- Hero -->
 <section id="hero">
@@ -124,7 +133,7 @@
             <span class="tag">Docker</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="project-link" aria-label="ThreatLens source code on GitHub"><span class="prompt">&gt;</span> code</a>
             <a href="https://threatlens-demo.onrender.com" target="_blank" rel="noopener" class="project-link demo">live demo</a>
           </div>
         </div>
@@ -145,7 +154,7 @@
             <span class="tag">IOC Analysis</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="project-link" aria-label="Phishing Email Analyzer source code on GitHub"><span class="prompt">&gt;</span> code</a>
             <a href="https://metamaaz-phishing-analyzer.streamlit.app" target="_blank" rel="noopener" class="project-link demo">live demo</a>
           </div>
         </div>
@@ -166,7 +175,7 @@
             <span class="tag">NIST 800-207</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="project-link" aria-label="IAM Least Privilege source code on GitHub"><span class="prompt">&gt;</span> code</a>
           </div>
         </div>
       </div>
@@ -187,7 +196,7 @@
             <span class="tag">SBOM</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="project-link" aria-label="Docker Security Pipeline source code on GitHub"><span class="prompt">&gt;</span> code</a>
           </div>
         </div>
       </div>
@@ -207,7 +216,7 @@
             <span class="tag">Threat Modelling</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="project-link" aria-label="Network Segmentation Advisor source code on GitHub"><span class="prompt">&gt;</span> code</a>
           </div>
         </div>
       </div>
@@ -227,7 +236,7 @@
             <span class="tag">MITRE ATT&amp;CK</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="project-link" aria-label="Memory Forensics Investigation source code on GitHub"><span class="prompt">&gt;</span> code</a>
           </div>
         </div>
       </div>
@@ -247,7 +256,7 @@
             <span class="tag">CLI</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="project-link" aria-label="Password Generator source code on GitHub"><span class="prompt">&gt;</span> code</a>
             <a href="https://securepassword-generator.streamlit.app" target="_blank" rel="noopener" class="project-link demo">live demo</a>
           </div>
         </div>
@@ -268,7 +277,7 @@
             <span class="tag">CloudFormation</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="project-link"><span class="prompt">&gt;</span> code</a>
+            <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="project-link" aria-label="Grafana on K8s with CloudFormation source code on GitHub"><span class="prompt">&gt;</span> code</a>
           </div>
         </div>
       </div>
@@ -548,6 +557,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- Footer -->
 <footer>
