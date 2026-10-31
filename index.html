@@ -8,89 +8,74 @@
   <!-- Set theme before first paint so a saved light preference doesn't flash dark.
        Must stay inline and above the stylesheets. try/catch: localStorage throws in some privacy modes. -->
   <script>try{if(localStorage.getItem('mh-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-  <!-- Self-hosted fonts: same origin, no third-party handshake. Regenerate with ./fetch-fonts.sh -->
+  <!-- Self-hosted fonts: same origin, no third-party handshake. -->
   <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="scanlines" aria-hidden="true"></div>
+<header class="site-head">
+  <a href="#top" class="wordmark">Maaz<br />Husain</a>
+  <div class="head-actions">
+    <button class="theme-toggle" id="themeBtn" type="button">Light</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-<!-- Nav -->
-<nav>
-  <a href="#hero" class="nav-logo"><span class="prompt-user">maaz</span>@<span class="prompt-host">husain</span>:~$</a>
-  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#experience">./experience</a></li>
-    <li><a href="#projects">./projects</a></li>
-    <li><a href="#skills">./skills</a></li>
-    <li><a href="#certs">./certs</a></li>
-    <li><a href="#references">./references</a></li>
-    <li><a href="#education">./education</a></li>
-    <li><a href="#contact">./contact</a></li>
-    <li><button class="theme-toggle" id="themeBtn">[dark]</button></li>
-  </ul>
+<nav class="menu" id="menu" aria-label="Sections" hidden>
+  <ol>
+    <li><a href="#experience"><span class="menu-num">01</span>Experience</a></li>
+    <li><a href="#projects"><span class="menu-num">02</span>Projects</a></li>
+    <li><a href="#skills"><span class="menu-num">03</span>Skills</a></li>
+    <li><a href="#certs"><span class="menu-num">04</span>Certifications</a></li>
+    <li><a href="#references"><span class="menu-num">05</span>References</a></li>
+    <li><a href="#education"><span class="menu-num">06</span>Education</a></li>
+    <li><a href="#contact"><span class="menu-num">07</span>Contact</a></li>
+  </ol>
 </nav>
 
-<main>
+<main id="top">
 
 <!-- Hero -->
-<section id="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-term reveal">
-        <span class="prompt">$</span> whoami<span class="type-out" id="typeTarget"></span><span class="cursor"></span>
-      </div>
-      <h1 class="hero-name reveal" style="transition-delay:0.08s">
-        Maaz Husain<span class="accent">_</span>
-      </h1>
-      <div class="hero-eyebrow reveal" style="transition-delay:0.12s"><span class="comment">//</span> <span id="roleText">Cybersecurity Analyst</span></div>
-      <p class="hero-sub reveal" style="transition-delay:0.18s">
-        Senior Quality Engineer transitioning into Cybersecurity. 5+ years delivering secure,
-        cloud-native applications at enterprise scale. Currently pursuing MSc Cybersecurity
-        at the University of Surrey. Building hands-on DFIR and SOC tooling along the way.
-      </p>
-      <div class="hero-actions reveal" style="transition-delay:0.24s">
-        <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="hero-cta">
-          <span class="prompt">&gt;</span> connect --linkedin
-        </a>
-        <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="hero-cta ghost">
-          <span class="prompt">&gt;</span> view --github
-        </a>
-      </div>
-      <div class="hero-stats reveal" style="transition-delay:0.32s">
-        <div>
-          <span class="hero-stat-num">5+</span>
-          <span class="hero-stat-label">years exp.</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">9</span>
-          <span class="hero-stat-label">certifications</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">1</span>
-          <span class="hero-stat-label">published paper</span>
-        </div>
-      </div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <h1 class="display reveal">Secure by<br /><span class="accent">Design.</span></h1>
+    <p class="vertical" aria-hidden="true">Cybersecurity<br />2020—Now</p>
+
+    <div class="intro reveal">
+      <p>Senior Quality Engineer transitioning into cybersecurity. 5+ years delivering secure, cloud-native applications at enterprise scale.</p>
+      <p>Currently pursuing an MSc in Cybersecurity at the University of Surrey, and building hands-on DFIR and SOC tooling along the way.</p>
+    </div>
+
+    <dl class="stats reveal">
+      <div><dt>Years experience</dt><dd>5+</dd></div>
+      <div><dt>Certifications</dt><dd>9</dd></div>
+      <div><dt>Published paper</dt><dd>1</dd></div>
+    </dl>
+
+    <div class="hero-links reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="caps-link">LinkedIn</a>
+      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="caps-link">GitHub</a>
     </div>
   </div>
 </section>
 
 <!-- Experience -->
 <section id="experience">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">01 / work history</div>
-      <h2 class="section-title"><span class="prompt">~/</span>experience</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">01 — Work history</span>
+      <h2 class="sec-title">Experience<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
 
-    <div class="exp-item reveal">
-      <div class="exp-date">Oct 2020<br/>– Dec 2025</div>
+    <article class="exp reveal">
+      <p class="exp-date">Oct 2020 – Dec 2025</p>
       <div>
-        <div class="exp-role">Senior Quality Engineer</div>
-        <div class="exp-company">LTIMindtree · Mumbai</div>
-        <ul class="exp-bullets">
+        <h3 class="exp-role">Senior Quality Engineer</h3>
+        <p class="exp-company">LTIMindtree, Mumbai</p>
+        <ul class="exp-list">
           <li>Spearheaded QA &amp; cloud deployment for an American Insurance client – achieved <strong>25% reduction</strong> in FTE headcount through process automation.</li>
           <li>Managed Functional, API and Automation test suites; implemented robust pipeline &amp; API workflows increasing system reliability by <strong>45%</strong>.</li>
           <li>Led offshore team coordinating with client, cutting requirement turnaround by <strong>2 days per sprint</strong>.</li>
@@ -99,184 +84,110 @@
           <li>Maintained in-depth documentation for cloud infrastructure, APIs and test configurations; streamlined team onboarding.</li>
         </ul>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">02 / open work</div>
-      <h2 class="section-title"><span class="prompt">~/</span>projects</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">02 — Open work</span>
+      <h2 class="sec-title">Projects<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
-    <div class="projects-grid reveal">
 
-      <div class="project-card featured">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">threatlens</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">ThreatLens</div>
-            <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="project-arrow" aria-label="Open ThreatLens on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Full-stack blue-team threat-intelligence platform — ingest, enrich, score, correlate and investigate IOCs end to end. FastAPI backend with JWT auth, role-based access control and audit logging; a React + TypeScript dashboard with an interactive threat graph. Runs fully offline on a deterministic mock feed, with AbuseIPDB, VirusTotal and OTX activating when API keys are set.</div>
-          <div class="tags">
-            <span class="tag">FastAPI</span>
-            <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Threat Intel</span>
-            <span class="tag">Docker</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="project-link" aria-label="ThreatLens source code on GitHub"><span class="prompt">&gt;</span> code</a>
-            <a href="https://threatlens-demo.onrender.com" target="_blank" rel="noopener" class="project-link demo">live demo</a>
-          </div>
-        </div>
-      </div>
+    <div class="cards">
 
-      <div class="project-card featured">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">phishing-email-analyzer</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Phishing Email Analyzer</div>
-            <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Phishing Email Analyzer on GitHub">↗</a>
-          </div>
-          <div class="project-desc">CLI tool that pulls apart a suspicious email the way a SOC analyst would: SPF/DKIM/DMARC checks, Received-chain tracing, IOC extraction &amp; defanging, static attachment inspection — and an explainable risk score where every point traces to a named finding. Static analysis only; no link is fetched and no attachment is run.</div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">SOC</span>
-            <span class="tag">Email Security</span>
-            <span class="tag">IOC Analysis</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="project-link" aria-label="Phishing Email Analyzer source code on GitHub"><span class="prompt">&gt;</span> code</a>
-            <a href="https://metamaaz-phishing-analyzer.streamlit.app" target="_blank" rel="noopener" class="project-link demo">live demo</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">Threat Intel</p>
+        <h3 class="card-title">ThreatLens</h3>
+        <p class="card-desc">Full-stack blue-team threat-intelligence platform — ingest, enrich, score, correlate and investigate IOCs end to end. FastAPI backend with JWT auth, role-based access control and audit logging; a React + TypeScript dashboard with an interactive threat graph. Runs fully offline on a deterministic mock feed, with AbuseIPDB, VirusTotal and OTX activating when API keys are set.</p>
+        <p class="card-stack">FastAPI / React / TypeScript / Threat Intel / Docker</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="caps-link" aria-label="ThreatLens source code on GitHub">View code</a>
+          <a href="https://threatlens-demo.onrender.com" target="_blank" rel="noopener" class="caps-link" aria-label="ThreatLens live demo">Live demo</a>
         </div>
-      </div>
+        <p class="card-code">MH01</p>
+      </article>
 
-      <div class="project-card featured">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">iam-least-privilege</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">IAM Least Privilege</div>
-            <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="project-arrow" aria-label="Open IAM Least Privilege on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Audits AWS IAM configurations for excessive permissions and privilege-escalation paths, then generates least-privilege policy recommendations mapped to NIST SP 800-207 and AWS best practice — cloud entitlements reviewed the way an analyst would, at scale.</div>
-          <div class="tags">
-            <span class="tag">AWS</span>
-            <span class="tag">IAM</span>
-            <span class="tag">Cloud Security</span>
-            <span class="tag">NIST 800-207</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="project-link" aria-label="IAM Least Privilege source code on GitHub"><span class="prompt">&gt;</span> code</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">SOC</p>
+        <h3 class="card-title">Phishing Email Analyzer</h3>
+        <p class="card-desc">CLI tool that pulls apart a suspicious email the way a SOC analyst would: SPF/DKIM/DMARC checks, Received-chain tracing, IOC extraction &amp; defanging, static attachment inspection — and an explainable risk score where every point traces to a named finding. Static analysis only; no link is fetched and no attachment is run.</p>
+        <p class="card-stack">Python / SOC / Email Security / IOC Analysis</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="caps-link" aria-label="Phishing Email Analyzer source code on GitHub">View code</a>
+          <a href="https://metamaaz-phishing-analyzer.streamlit.app" target="_blank" rel="noopener" class="caps-link" aria-label="Phishing Email Analyzer live demo">Live demo</a>
         </div>
-      </div>
+        <p class="card-code">MH02</p>
+      </article>
 
-      <div class="project-card">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">docker-security-pipeline</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Docker Security Pipeline</div>
-            <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Docker Security Pipeline on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Hands-on DevSecOps pipeline that hardens a Flask app from build to ship: a multi-stage, non-root Docker build on digest-pinned base images, a Trivy CI gate that fails on vulnerable layers, plus SBOM generation with Syft and Docker Scout scanning — security shifted left into the build itself.</div>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">DevSecOps</span>
-            <span class="tag">Trivy</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">SBOM</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="project-link" aria-label="Docker Security Pipeline source code on GitHub"><span class="prompt">&gt;</span> code</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">Cloud Security</p>
+        <h3 class="card-title">IAM Least Privilege</h3>
+        <p class="card-desc">Audits AWS IAM configurations for excessive permissions and privilege-escalation paths, then generates least-privilege policy recommendations mapped to NIST SP 800-207 and AWS best practice — cloud entitlements reviewed the way an analyst would, at scale.</p>
+        <p class="card-stack">AWS / IAM / Cloud Security / NIST 800-207</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="caps-link" aria-label="IAM Least Privilege source code on GitHub">View code</a>
         </div>
-      </div>
+        <p class="card-code">MH03</p>
+      </article>
 
-      <div class="project-card">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">network-segmentation-advisor</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Network Segmentation Advisor</div>
-            <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Network Segmentation Advisor on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Turns an Nmap scan or YAML inventory into a least-privilege segmentation plan. Classifies each host by role and sensitivity, groups them into security zones, and outputs the allow/deny rules needed to enforce them — network threat modelling reduced to a repeatable command.</div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Nmap</span>
-            <span class="tag">Network Security</span>
-            <span class="tag">Threat Modelling</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="project-link" aria-label="Network Segmentation Advisor source code on GitHub"><span class="prompt">&gt;</span> code</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">DevSecOps</p>
+        <h3 class="card-title">Docker Security Pipeline</h3>
+        <p class="card-desc">Hands-on DevSecOps pipeline that hardens a Flask app from build to ship: a multi-stage, non-root Docker build on digest-pinned base images, a Trivy CI gate that fails on vulnerable layers, plus SBOM generation with Syft and Docker Scout scanning — security shifted left into the build itself.</p>
+        <p class="card-stack">Docker / DevSecOps / Trivy / CI/CD / SBOM</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="caps-link" aria-label="Docker Security Pipeline source code on GitHub">View code</a>
         </div>
-      </div>
+        <p class="card-code">MH04</p>
+      </article>
 
-      <div class="project-card">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">memory-forensics-investigation</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Memory Forensics Investigation</div>
-            <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Memory Forensics Investigation on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Repeatable DFIR workflow built on Volatility 3 — memory image in, integrity-verified evidence pack out. Triages captured RAM for malicious processes, injected code, C2 traffic and persistence, then produces MITRE ATT&amp;CK-mapped, evidence-led investigation reports across four worked cases.</div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Volatility 3</span>
-            <span class="tag">DFIR</span>
-            <span class="tag">MITRE ATT&amp;CK</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="project-link" aria-label="Memory Forensics Investigation source code on GitHub"><span class="prompt">&gt;</span> code</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">Network Security</p>
+        <h3 class="card-title">Network Segmentation Advisor</h3>
+        <p class="card-desc">Turns an Nmap scan or YAML inventory into a least-privilege segmentation plan. Classifies each host by role and sensitivity, groups them into security zones, and outputs the allow/deny rules needed to enforce them — network threat modelling reduced to a repeatable command.</p>
+        <p class="card-stack">Python / Nmap / Network Security / Threat Modelling</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="caps-link" aria-label="Network Segmentation Advisor source code on GitHub">View code</a>
         </div>
-      </div>
+        <p class="card-code">MH05</p>
+      </article>
 
-      <div class="project-card">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">password-generator</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Password Generator</div>
-            <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Password Generator on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Secure CLI password generator in Python with Have I Been Pwned breach checking via k-anonymity — only a hash prefix ever leaves the machine — plus customisable character sets and an auto-clearing clipboard.</div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">HIBP</span>
-            <span class="tag">k-Anonymity</span>
-            <span class="tag">CLI</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="project-link" aria-label="Password Generator source code on GitHub"><span class="prompt">&gt;</span> code</a>
-            <a href="https://securepassword-generator.streamlit.app" target="_blank" rel="noopener" class="project-link demo">live demo</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">DFIR</p>
+        <h3 class="card-title">Memory Forensics Investigation</h3>
+        <p class="card-desc">Repeatable DFIR workflow built on Volatility 3 — memory image in, integrity-verified evidence pack out. Triages captured RAM for malicious processes, injected code, C2 traffic and persistence, then produces MITRE ATT&amp;CK-mapped, evidence-led investigation reports across four worked cases.</p>
+        <p class="card-stack">Python / Volatility 3 / DFIR / MITRE ATT&amp;CK</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="caps-link" aria-label="Memory Forensics Investigation source code on GitHub">View code</a>
         </div>
-      </div>
+        <p class="card-code">MH06</p>
+      </article>
 
-      <div class="project-card">
-        <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">grafana-k8s-cloudformation</span></div>
-        <div class="project-body">
-          <div class="project-top">
-            <div class="project-name">Grafana on K8s with CloudFormation</div>
-            <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="project-arrow" aria-label="Open Grafana on K8s with CloudFormation on GitHub">↗</a>
-          </div>
-          <div class="project-desc">Deploys a Grafana observability stack on Kubernetes using AWS CloudFormation for infrastructure provisioning.</div>
-          <div class="tags">
-            <span class="tag">AWS</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">CloudFormation</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="project-link" aria-label="Grafana on K8s with CloudFormation source code on GitHub"><span class="prompt">&gt;</span> code</a>
-          </div>
+      <article class="card reveal">
+        <p class="label">Tooling</p>
+        <h3 class="card-title">Password Generator</h3>
+        <p class="card-desc">Secure CLI password generator in Python with Have I Been Pwned breach checking via k-anonymity — only a hash prefix ever leaves the machine — plus customisable character sets and an auto-clearing clipboard.</p>
+        <p class="card-stack">Python / HIBP / k-Anonymity / CLI</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="caps-link" aria-label="Password Generator source code on GitHub">View code</a>
+          <a href="https://securepassword-generator.streamlit.app" target="_blank" rel="noopener" class="caps-link" aria-label="Password Generator live demo">Live demo</a>
         </div>
-      </div>
+        <p class="card-code">MH07</p>
+      </article>
+
+      <article class="card reveal">
+        <p class="label">Infrastructure</p>
+        <h3 class="card-title">Grafana on K8s with CloudFormation</h3>
+        <p class="card-desc">Deploys a Grafana observability stack on Kubernetes using AWS CloudFormation for infrastructure provisioning.</p>
+        <p class="card-stack">AWS / Kubernetes / Grafana / CloudFormation</p>
+        <div class="card-links">
+          <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="caps-link" aria-label="Grafana on K8s with CloudFormation source code on GitHub">View code</a>
+        </div>
+        <p class="card-code">MH08</p>
+      </article>
 
     </div>
   </div>
@@ -284,211 +195,86 @@
 
 <!-- Skills -->
 <section id="skills">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">03 / capabilities</div>
-      <h2 class="section-title"><span class="prompt">~/</span>skills</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">03 — Capabilities</span>
+      <h2 class="sec-title">Skills<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
-    <div class="skills-grid reveal">
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> cybersecurity</div>
-        <div class="skill-tags">
-          <span class="skill-tag">DFIR</span>
-          <span class="skill-tag">Volatility 3</span>
-          <span class="skill-tag">Phishing Triage</span>
-          <span class="skill-tag">Threat Intel</span>
-          <span class="skill-tag">IOC Enrichment</span>
-          <span class="skill-tag">Threat Modelling</span>
-          <span class="skill-tag">IAM</span>
-          <span class="skill-tag">Cloud Security</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> languages</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Bash</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> cloud &amp; devops</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Azure DevOps</span>
-          <span class="skill-tag">Azure AD</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Kubernetes</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> testing &amp; qa</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">TestComplete</span>
-          <span class="skill-tag">API Testing</span>
-          <span class="skill-tag">Test Automation</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> leadership</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Team Lead</span>
-          <span class="skill-tag">Mentoring</span>
-          <span class="skill-tag">Cross-functional</span>
-          <span class="skill-tag">Documentation</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-label"><span class="comment">#</span> machine learning</div>
-        <div class="skill-tags">
-          <span class="skill-tag">LSTM</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">Jupyter</span>
-          <span class="skill-tag">Data Analysis</span>
-        </div>
-      </div>
-    </div>
+    <dl class="index reveal">
+      <div class="index-row"><dt class="label">Cybersecurity</dt><dd>DFIR, Volatility 3, Phishing Triage, Threat Intel, IOC Enrichment, Threat Modelling, IAM, Cloud Security</dd></div>
+      <div class="index-row"><dt class="label">Languages</dt><dd>Python, JavaScript, TypeScript, SQL, Bash, HTML/CSS</dd></div>
+      <div class="index-row"><dt class="label">Cloud &amp; DevOps</dt><dd>Azure DevOps, Azure AD, AWS, CI/CD, Docker, Kubernetes</dd></div>
+      <div class="index-row"><dt class="label">Testing &amp; QA</dt><dd>Selenium, TestComplete, API Testing, Test Automation</dd></div>
+      <div class="index-row"><dt class="label">Leadership</dt><dd>Team Lead, Mentoring, Cross-functional, Documentation</dd></div>
+      <div class="index-row"><dt class="label">Machine Learning</dt><dd>LSTM, NLP, Jupyter, Data Analysis</dd></div>
+    </dl>
   </div>
 </section>
 
 <!-- Certifications -->
 <section id="certs">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">04 / credentials</div>
-      <h2 class="section-title"><span class="prompt">~/</span>certifications</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">04 — Credentials</span>
+      <h2 class="sec-title">Certifications<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
-    <div class="cert-grid reveal">
-      <a href="https://www.credly.com/badges/e0c2a5b1-88da-4420-9411-8f749e37037e/public_url" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">ISC2<br/>CC</div>
-        <div>
-          <div class="cert-name">ISC2 Certified in Cybersecurity</div>
-          <div class="cert-issuer">ISC2</div>
-        </div>
-      </a>
-      <a href="https://www.credly.com/badges/283ff9ea-4e9c-450a-ab4f-358818bde306/public_url" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">GOOG<br/>CYBER</div>
-        <div>
-          <div class="cert-name">Google Cybersecurity Professional Certificate</div>
-          <div class="cert-issuer">Google</div>
-        </div>
-      </a>
-      <a href="https://www.credly.com/badges/ee2a7bd0-4865-430d-bad4-eddc5476cfeb/public_url" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">THM<br/>SEC1</div>
-        <div>
-          <div class="cert-name">Cyber Security 101 (SEC1)</div>
-          <div class="cert-issuer">TryHackMe</div>
-        </div>
-      </a>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/1DA598E22A268BE?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">AZ<br/>400</div>
-        <div>
-          <div class="cert-name">AZ-400: DevOps Engineer Expert</div>
-          <div class="cert-issuer">Microsoft Certified</div>
-        </div>
-      </a>
-      <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b20c1caec404b87bb987d5f6a3e70d3" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">AWS<br/>SAA</div>
-        <div>
-          <div class="cert-name">Solutions Architect – Associate</div>
-          <div class="cert-issuer">Amazon Web Services</div>
-        </div>
-      </a>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/A86EA9A9F679196E?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">AZ<br/>104</div>
-        <div>
-          <div class="cert-name">AZ-104: Azure Administrator</div>
-          <div class="cert-issuer">Microsoft Certified</div>
-        </div>
-      </a>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4C031E4A9E79C876?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">DP<br/>203</div>
-        <div>
-          <div class="cert-name">DP-203: Azure Data Engineer</div>
-          <div class="cert-issuer">Microsoft Certified</div>
-        </div>
-      </a>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/BB05DFB998270A25?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">AZ<br/>900</div>
-        <div>
-          <div class="cert-name">AZ-900: Azure Fundamentals</div>
-          <div class="cert-issuer">Microsoft Certified</div>
-        </div>
-      </a>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4B0FE66E430DE2D1?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" class="cert-card reveal">
-        <div class="cert-badge">DP<br/>900</div>
-        <div>
-          <div class="cert-name">DP-900: Azure Data Fundamentals</div>
-          <div class="cert-issuer">Microsoft Certified</div>
-        </div>
-      </a>
-    </div>
+    <ul class="ledger reveal">
+      <li><a href="https://www.credly.com/badges/e0c2a5b1-88da-4420-9411-8f749e37037e/public_url" target="_blank" rel="noopener"><span class="ledger-code">ISC2 CC</span><span class="ledger-name">ISC2 Certified in Cybersecurity</span><span class="ledger-meta">ISC2</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://www.credly.com/badges/283ff9ea-4e9c-450a-ab4f-358818bde306/public_url" target="_blank" rel="noopener"><span class="ledger-code">GOOG</span><span class="ledger-name">Google Cybersecurity Professional Certificate</span><span class="ledger-meta">Google</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://www.credly.com/badges/ee2a7bd0-4865-430d-bad4-eddc5476cfeb/public_url" target="_blank" rel="noopener"><span class="ledger-code">SEC1</span><span class="ledger-name">Cyber Security 101</span><span class="ledger-meta">TryHackMe</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/1DA598E22A268BE?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-400</span><span class="ledger-name">DevOps Engineer Expert</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b20c1caec404b87bb987d5f6a3e70d3" target="_blank" rel="noopener"><span class="ledger-code">AWS SAA</span><span class="ledger-name">Solutions Architect – Associate</span><span class="ledger-meta">Amazon Web Services</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/A86EA9A9F679196E?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-104</span><span class="ledger-name">Azure Administrator</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4C031E4A9E79C876?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">DP-203</span><span class="ledger-name">Azure Data Engineer</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/BB05DFB998270A25?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-900</span><span class="ledger-name">Azure Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4B0FE66E430DE2D1?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">DP-900</span><span class="ledger-name">Azure Data Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+    </ul>
   </div>
 </section>
 
-<!-- References / Testimonials -->
+<!-- References -->
 <section id="references">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">05 / testimonials</div>
-      <h2 class="section-title"><span class="prompt">~/</span>references</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">05 — Testimonials</span>
+      <h2 class="sec-title">References<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
-    <div class="ref-grid reveal">
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">He has great communication skills, and is thorough in troubleshooting the issues that come up in our system. He is reliable and does a consistently good job. I would highly recommend him!</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Mickey (Mihaela) Conopask</span>
-          <span class="ref-role">FCAS · 20+ years of experience</span>
-          <span class="ref-rel"><span class="comment">//</span> client · Jan 2026</span>
-        </div>
+    <div class="cards">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Client · Jan 2026</p>
+        <blockquote>He has great communication skills, and is thorough in troubleshooting the issues that come up in our system. He is reliable and does a consistently good job. I would highly recommend him!</blockquote>
+        <p class="quote-name">Mickey (Mihaela) Conopask</p>
+        <p class="quote-role">FCAS · 20+ years of experience</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">His work in validating/testing applications was top notch — I can always rely on his skills to deploy functionality with the highest quality. He was instrumental in creating automation plans and scripts for multiple applications. A great asset to any team he joins.</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Ritesh Khemka</span>
-          <span class="ref-role">Application Architect, Team Lead</span>
-          <span class="ref-rel"><span class="comment">//</span> managed Maaz directly · Jan 2026</span>
-        </div>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Managed Maaz directly · Jan 2026</p>
+        <blockquote>His work in validating/testing applications was top notch — I can always rely on his skills to deploy functionality with the highest quality. He was instrumental in creating automation plans and scripts for multiple applications. A great asset to any team he joins.</blockquote>
+        <p class="quote-name">Ritesh Khemka</p>
+        <p class="quote-role">Application Architect, Team Lead</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">Maaz single-handedly drove an entire application's testing across all aspects — database, functional, UI automation and API automation. He was excellent in client communication and built great rapport with the customer within months of joining, while mentoring juniors and taking on work outside his project. His work has been exemplary — a great addition to any team he joins.</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Shobha M Devadiga</span>
-          <span class="ref-role">Automation QA Architect · Project Manager</span>
-          <span class="ref-rel"><span class="comment">//</span> managed Maaz directly · Dec 2025</span>
-        </div>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Managed Maaz directly · Dec 2025</p>
+        <blockquote>Maaz single-handedly drove an entire application's testing across all aspects — database, functional, UI automation and API automation. He was excellent in client communication and built great rapport with the customer within months of joining, while mentoring juniors and taking on work outside his project. His work has been exemplary — a great addition to any team he joins.</blockquote>
+        <p class="quote-name">Shobha M Devadiga</p>
+        <p class="quote-role">Automation QA Architect · Project Manager</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">Maaz is a very hardworking and dependable QA professional, great at both functional and automation testing. He brings consistency and can always be trusted to deliver high-quality results. What really stands out is his eagerness to learn — always excited to pick up new skills. Helpful, supportive, and with a strong sense of ownership.</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Shubham Chaudhari</span>
-          <span class="ref-role">Specialist</span>
-          <span class="ref-rel"><span class="comment">//</span> managed Maaz directly · Dec 2025</span>
-        </div>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Managed Maaz directly · Dec 2025</p>
+        <blockquote>Maaz is a very hardworking and dependable QA professional, great at both functional and automation testing. He brings consistency and can always be trusted to deliver high-quality results. What really stands out is his eagerness to learn — always excited to pick up new skills. Helpful, supportive, and with a strong sense of ownership.</blockquote>
+        <p class="quote-name">Shubham Chaudhari</p>
+        <p class="quote-role">Specialist</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">Maaz has strong knowledge of automation, performance and manual testing. He's friendly by nature and helps others complete their work — straightforward, honest, and able to handle any kind of pressure while coordinating with the client.</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Premkumar Thanikachlam</span>
-          <span class="ref-role">Senior Specialist Software Engineer · LTIMindtree</span>
-          <span class="ref-rel"><span class="comment">//</span> managed Maaz directly · Dec 2025</span>
-        </div>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Managed Maaz directly · Dec 2025</p>
+        <blockquote>Maaz has strong knowledge of automation, performance and manual testing. He's friendly by nature and helps others complete their work — straightforward, honest, and able to handle any kind of pressure while coordinating with the client.</blockquote>
+        <p class="quote-name">Premkumar Thanikachlam</p>
+        <p class="quote-role">Senior Specialist Software Engineer · LTIMindtree</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="ref-card">
-        <blockquote class="ref-quote">An excellent QA professional with strong attention to detail and a clear understanding of product quality. His dedication helped the team deliver reliable and high-quality releases.</blockquote>
-        <div class="ref-meta">
-          <span class="ref-name">Siddharth Gajbhiye</span>
-          <span class="ref-role">Senior Software Engineer</span>
-          <span class="ref-rel"><span class="comment">//</span> worked with Maaz · Dec 2025</span>
-        </div>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+        <p class="label">Worked with Maaz · Dec 2025</p>
+        <blockquote>An excellent QA professional with strong attention to detail and a clear understanding of product quality. His dedication helped the team deliver reliable and high-quality releases.</blockquote>
+        <p class="quote-name">Siddharth Gajbhiye</p>
+        <p class="quote-role">Senior Software Engineer</p>
       </a>
     </div>
   </div>
@@ -496,101 +282,50 @@
 
 <!-- Education + Publication -->
 <section id="education">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-eyebrow">06 / academic</div>
-      <h2 class="section-title"><span class="prompt">~/</span>education</h2>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">06 — Academic</span>
+      <h2 class="sec-title">Education<span class="accent">.</span></h2>
     </div>
-    <hr class="divider" />
-    <div class="edu-list reveal">
-      <div class="edu-item">
-        <div>
-          <div class="edu-deg">MSc Cybersecurity</div>
-          <div class="edu-school">University of Surrey</div>
-        </div>
-        <div class="edu-year">Feb 2026 – Present</div>
-      </div>
-      <div class="edu-item">
-        <div>
-          <div class="edu-deg">BE Information Technology</div>
-          <div class="edu-school">M.H. Saboo Siddik College of Engineering, Mumbai</div>
-        </div>
-        <div class="edu-year">2016 – 2020</div>
-      </div>
-    </div>
+    <ul class="ledger reveal">
+      <li><div><span class="ledger-code">MSc</span><span class="ledger-name">Cybersecurity</span><span class="ledger-meta">University of Surrey</span><span class="ledger-year">Feb 2026 – Present</span></div></li>
+      <li><div><span class="ledger-code">BE</span><span class="ledger-name">Information Technology</span><span class="ledger-meta">M.H. Saboo Siddik College of Engineering, Mumbai</span><span class="ledger-year">2016 – 2020</span></div></li>
+    </ul>
 
-    <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" rel="noopener" class="pub-card reveal">
-      <div class="pub-eyebrow"><span class="comment">//</span> research · Springer 2020</div>
-      <div class="pub-title">Stock Market Prediction using Machine Learning</div>
-      <div class="pub-venue">Intelligent Computing, Information and Control Systems · ICICCS 2020</div>
-      <div class="pub-desc">LSTM model for stock price prediction combined with NLP-based sentiment analysis, achieving ≤30 RMSE. Co-authored with A. Shaikh, A. Panuganti &amp; P. Singh. Implemented in Python using Jupyter Notebook.</div>
-      <div class="pub-link">↗ View on SpringerLink</div>
+    <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" rel="noopener" class="pub reveal">
+      <p class="label">Research · Springer 2020</p>
+      <h3 class="pub-title">Stock Market Prediction using Machine Learning</h3>
+      <p class="pub-venue">Intelligent Computing, Information and Control Systems · ICICCS 2020</p>
+      <p class="pub-desc">LSTM model for stock price prediction combined with NLP-based sentiment analysis, achieving ≤30 RMSE. Co-authored with A. Shaikh, A. Panuganti &amp; P. Singh. Implemented in Python using Jupyter Notebook.</p>
+      <span class="caps-link">View on SpringerLink</span>
     </a>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-  <div class="container">
-    <div class="contact-wrap reveal">
-      <div class="contact-eyebrow"><span class="prompt">$</span> ping maaz</div>
-      <h3 class="contact-heading">Open to <span class="accent">opportunities</span><span class="cursor sm"></span></h3>
-      <p class="contact-sub">Cybersecurity analyst and cloud security roles. Based in Surrey, UK.</p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="contact-btn primary">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="contact-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="mailto:maazcdsa@gmail.com" class="contact-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          Email me
-        </a>
-      </div>
+  <div class="wrap">
+    <span class="label reveal">07 — Contact</span>
+    <h2 class="display contact-title reveal">Open to<br /><span class="accent">opportunities.</span></h2>
+    <div class="intro reveal">
+      <p>Cybersecurity analyst and cloud security roles. Based in Surrey, UK.</p>
+    </div>
+    <div class="hero-links reveal">
+      <a href="mailto:maazcdsa@gmail.com" class="caps-link">Email me</a>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="caps-link">LinkedIn</a>
+      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="caps-link">GitHub</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <span class="footer-text"><span class="prompt">$</span> maaz husain · maazhusain.com · 2026</span>
-      <span class="footer-text status-ok">● secure · cyber · cloud · qa</span>
-    </div>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <span>Maaz Husain</span>
+    <span>maazhusain.com · 2026</span>
   </div>
 </footer>
-
-<!-- Tweaks Panel -->
-<div id="tweaks-panel">
-  <div class="tweak-title">Tweaks</div>
-  <div class="tweak-row">
-    <label class="tweak-lbl" for="tweak-accent">Accent Color</label>
-    <input type="color" id="tweak-accent" value="#00E5A0" />
-  </div>
-  <div class="tweak-row">
-    <label class="tweak-lbl" for="tweak-role">Role Title</label>
-    <select id="tweak-role">
-      <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-      <option value="Cloud Security Engineer">Cloud Security Engineer</option>
-      <option value="DevOps Security Engineer">DevOps Security Engineer</option>
-      <option value="Senior QA Engineer">Senior QA Engineer</option>
-    </select>
-  </div>
-  <div class="tweak-row">
-    <label class="tweak-lbl" for="tweak-mono">Typography</label>
-    <select id="tweak-mono">
-      <option value="'JetBrains Mono', ui-monospace, monospace" selected>JetBrains Mono</option>
-      <option value="'Fira Code', ui-monospace, monospace">Fira Code</option>
-      <option value="'IBM Plex Mono', ui-monospace, monospace">IBM Plex Mono</option>
-    </select>
-  </div>
-</div>
 
 <script src="script.js" defer></script>
 </body>
