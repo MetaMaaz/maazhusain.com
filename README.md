@@ -13,6 +13,8 @@ Personal portfolio website for Maaz Husain — Cybersecurity Analyst & Senior Qu
 
 ```
 ├── index.html               # Markup, all CSS (inline <style>), CSP, link-preview tags, JSON-LD
+├── 404.html                 # Not-found page (real 404 status on both hosts; without it Cloudflare
+│                            # serves the homepage with 200 for every unknown URL)
 ├── script.js                # Theme toggle, full-screen menu, scroll reveal
 ├── fonts/
 │   ├── inter-core.woff2     # Preloaded subset (generated)
@@ -44,7 +46,7 @@ Generated files are committed; nothing runs on deploy. Rerun the matching script
 
 | Change | Run |
 |---|---|
-| **Any CSS edit**, or editing the inline `<script>` in `<head>` | `python3 tools/update-csp.py` — a stale hash makes browsers drop all styling or the theme script |
+| **Any CSS edit**, or editing the inline `<script>` in `<head>` | `python3 tools/update-csp.py` (covers every *.html) — a stale hash makes browsers drop all styling or the theme script |
 | New font weight, characters outside Latin-1 / Latin Extended-A, OpenType features | `python3 tools/build-fonts.py` (also refreshes the CSP) |
 | Hero headline, name, role line or accent colour | `python3 tools/build-images.py`, then refresh LinkedIn's Post Inspector |
 | Before sending applications | `python3 tools/check-links.py` |

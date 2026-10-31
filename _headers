@@ -1,7 +1,7 @@
 # HTTP response headers for Cloudflare Pages (GitHub Pages ignores this file).
 # The CSP line is written by tools/update-csp.py; edit the others by hand.
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-/aNaxk4gNvpelw1rDOGQU0iOFUTTQRjan6UqvNpCYm8='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-ozM+9cHZ9p6b+8NkmBRXile2HaczpsWTbAqrRkudKFo=' 'sha256-UOlGJhUmaARycCaRIa44YQ5FLZNMKnX50BsT7yAzgI0='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; frame-ancestors 'none'
   Strict-Transport-Security: max-age=63072000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

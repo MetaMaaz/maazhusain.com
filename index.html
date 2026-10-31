@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Must come before any script or stylesheet. Generated hashes: edit via tools/update-csp.py -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-/aNaxk4gNvpelw1rDOGQU0iOFUTTQRjan6UqvNpCYm8='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-UOlGJhUmaARycCaRIa44YQ5FLZNMKnX50BsT7yAzgI0='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
@@ -32,7 +32,7 @@
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('mh-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
   <!-- Self-hosted fonts: same origin, no third-party handshake. Core subset is preloaded;
        fonts/inter-ext.woff2 loads only if a page uses a Latin Extended-A letter. Built by tools/build-fonts.py -->
-  <link rel="preload" href="fonts/inter-core.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-core.woff2" as="font" type="font/woff2" crossorigin />
   <!-- All CSS is inline: no render-blocking stylesheet request. Its CSP hash is generated, so after ANY edit
        to this block run tools/update-csp.py (the pre-commit hook in tools/hooks refuses a stale hash). -->
   <style>
@@ -42,7 +42,7 @@
   font-style: normal;
   font-weight: 100 400;
   font-display: swap;
-  src: url(fonts/inter-ext.woff2) format('woff2');
+  src: url(/fonts/inter-ext.woff2) format('woff2');
   unicode-range: U+0100-0130, U+0132-0148, U+014A-0151, U+0154-017F;
 }
 @font-face {
@@ -50,7 +50,7 @@
   font-style: normal;
   font-weight: 100 400;
   font-display: swap;
-  src: url(fonts/inter-core.woff2) format('woff2');
+  src: url(/fonts/inter-core.woff2) format('woff2');
   unicode-range: U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0152-0153, U+2013-2014, U+2018-2019, U+201C-201D, U+2026;
 }
 /* end @font-face */
