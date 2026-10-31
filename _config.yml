@@ -1,0 +1,4 @@
+# GitHub Pages builds this repo with Jekyll, which skips dot-folders.
+# Publish .well-known/security.txt, and only that: .nojekyll would also publish .claude/ and .gitignore.
+include:
+  - .well-known
