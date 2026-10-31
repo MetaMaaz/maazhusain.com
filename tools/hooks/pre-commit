@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refuse commits whose CSP hashes no longer match the inline <script>/<style>: the browser would
+# silently drop them (no styling or no JS set-up). Enable: git config core.hooksPath tools/hooks
+exec python3 tools/update-csp.py --check

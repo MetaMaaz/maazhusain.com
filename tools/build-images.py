@@ -21,7 +21,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-BG, INK, MUTED, ACCENT = '#0C0E0F', '#E1DDD6', '#B0A89C', '#F73D32'   # dark theme tokens in style.css
+BG, INK, MUTED, ACCENT = '#0C0E0F', '#E1DDD6', '#B0A89C', '#F73D32'   # dark theme tokens in index.html's <style>
 
 
 def favicon_svg():

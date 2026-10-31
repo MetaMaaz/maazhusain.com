@@ -1,0 +1,19 @@
+# Safety net for commits that skip the local pre-commit hook (e.g. edits in GitHub's web editor):
+# a stale CSP hash makes browsers drop the inline CSS or script. This fails the commit's check with
+# the fix to run. It can't stop Pages from deploying, so fix fast if it goes red.
+name: Check CSP hashes
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  csp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262   # v4.4.0
+      - run: python3 tools/update-csp.py --check

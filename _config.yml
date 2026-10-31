@@ -1,4 +1,6 @@
-# GitHub Pages builds this repo with Jekyll, which skips dot-folders.
-# Publish .well-known/security.txt, and only that: .nojekyll would also publish .claude/ and .gitignore.
+# GitHub Pages (and Cloudflare Pages, which runs `jekyll build` here) skip dot- and underscore-files.
+# Publish .well-known/security.txt and the Cloudflare _headers file, and nothing else hidden:
+# .nojekyll would also publish .claude/ and .gitignore.
 include:
   - .well-known
+  - _headers
