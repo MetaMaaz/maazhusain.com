@@ -14,8 +14,10 @@ import base64, hashlib, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# connect-src 'self': nothing on the site fetches, but Lighthouse reads robots.txt via an in-page fetch and
+# reports it missing under 'none'. Same-origin only, on a static host, so it opens nothing exploitable.
 POLICY = ("default-src 'none'; script-src 'self' {hashes}; style-src 'self'; font-src 'self'; "
-          "img-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests")
+          "img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests")
 META = re.compile(r'<meta http-equiv="Content-Security-Policy" content="[^"]*" />')
 # Inline scripts that execute; JSON-LD and other data blocks don't, so CSP doesn't apply to them.
 SCRIPT = re.compile(r'<script(?![^>]*\bsrc=)(?![^>]*type="application/ld\+json")[^>]*>(.*?)</script>', re.S)

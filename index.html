@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Must come before any script or stylesheet. Generated hashes: edit via tools/update-csp.py -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
@@ -98,8 +98,8 @@
     </dl>
 
     <div class="hero-links reveal">
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="caps-link">LinkedIn</a>
-      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="caps-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link">LinkedIn</a>
+      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link">GitHub</a>
     </div>
   </div>
 </section>
@@ -146,8 +146,8 @@
         <p class="card-desc">Full-stack blue-team threat-intelligence platform — ingest, enrich, score, correlate and investigate IOCs end to end. FastAPI backend with JWT auth, role-based access control and audit logging; a React + TypeScript dashboard with an interactive threat graph. Runs fully offline on a deterministic mock feed, with AbuseIPDB, VirusTotal and OTX activating when API keys are set.</p>
         <p class="card-stack">FastAPI / React / TypeScript / Threat Intel / Docker</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" class="caps-link" aria-label="ThreatLens source code on GitHub">View code</a>
-          <a href="https://threatlens-demo.onrender.com" target="_blank" rel="noopener" class="caps-link" aria-label="ThreatLens live demo">Live demo</a>
+          <a href="https://github.com/MetaMaaz/threatlens" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for ThreatLens on GitHub">View code</a>
+          <a href="https://threatlens-demo.onrender.com" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="Live demo of ThreatLens">Live demo</a>
         </div>
         <p class="card-code">MH01</p>
       </article>
@@ -158,8 +158,8 @@
         <p class="card-desc">CLI tool that pulls apart a suspicious email the way a SOC analyst would: SPF/DKIM/DMARC checks, Received-chain tracing, IOC extraction &amp; defanging, static attachment inspection — and an explainable risk score where every point traces to a named finding. Static analysis only; no link is fetched and no attachment is run.</p>
         <p class="card-stack">Python / SOC / Email Security / IOC Analysis</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" class="caps-link" aria-label="Phishing Email Analyzer source code on GitHub">View code</a>
-          <a href="https://metamaaz-phishing-analyzer.streamlit.app" target="_blank" rel="noopener" class="caps-link" aria-label="Phishing Email Analyzer live demo">Live demo</a>
+          <a href="https://github.com/MetaMaaz/phishing-email-analyzer" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Phishing Email Analyzer on GitHub">View code</a>
+          <a href="https://metamaaz-phishing-analyzer.streamlit.app" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="Live demo of Phishing Email Analyzer">Live demo</a>
         </div>
         <p class="card-code">MH02</p>
       </article>
@@ -170,7 +170,7 @@
         <p class="card-desc">Audits AWS IAM configurations for excessive permissions and privilege-escalation paths, then generates least-privilege policy recommendations mapped to NIST SP 800-207 and AWS best practice — cloud entitlements reviewed the way an analyst would, at scale.</p>
         <p class="card-stack">AWS / IAM / Cloud Security / NIST 800-207</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" class="caps-link" aria-label="IAM Least Privilege source code on GitHub">View code</a>
+          <a href="https://github.com/MetaMaaz/iam-least-privilege" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for IAM Least Privilege on GitHub">View code</a>
         </div>
         <p class="card-code">MH03</p>
       </article>
@@ -181,7 +181,7 @@
         <p class="card-desc">Hands-on DevSecOps pipeline that hardens a Flask app from build to ship: a multi-stage, non-root Docker build on digest-pinned base images, a Trivy CI gate that fails on vulnerable layers, plus SBOM generation with Syft and Docker Scout scanning — security shifted left into the build itself.</p>
         <p class="card-stack">Docker / DevSecOps / Trivy / CI/CD / SBOM</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" class="caps-link" aria-label="Docker Security Pipeline source code on GitHub">View code</a>
+          <a href="https://github.com/MetaMaaz/docker-security-pipeline" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Docker Security Pipeline on GitHub">View code</a>
         </div>
         <p class="card-code">MH04</p>
       </article>
@@ -192,7 +192,7 @@
         <p class="card-desc">Turns an Nmap scan or YAML inventory into a least-privilege segmentation plan. Classifies each host by role and sensitivity, groups them into security zones, and outputs the allow/deny rules needed to enforce them — network threat modelling reduced to a repeatable command.</p>
         <p class="card-stack">Python / Nmap / Network Security / Threat Modelling</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" class="caps-link" aria-label="Network Segmentation Advisor source code on GitHub">View code</a>
+          <a href="https://github.com/MetaMaaz/Network-Segmentation-Advisor" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Network Segmentation Advisor on GitHub">View code</a>
         </div>
         <p class="card-code">MH05</p>
       </article>
@@ -203,7 +203,7 @@
         <p class="card-desc">Repeatable DFIR workflow built on Volatility 3 — memory image in, integrity-verified evidence pack out. Triages captured RAM for malicious processes, injected code, C2 traffic and persistence, then produces MITRE ATT&amp;CK-mapped, evidence-led investigation reports across four worked cases.</p>
         <p class="card-stack">Python / Volatility 3 / DFIR / MITRE ATT&amp;CK</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" class="caps-link" aria-label="Memory Forensics Investigation source code on GitHub">View code</a>
+          <a href="https://github.com/MetaMaaz/Memory-Forensics-Investigation" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Memory Forensics Investigation on GitHub">View code</a>
         </div>
         <p class="card-code">MH06</p>
       </article>
@@ -214,8 +214,8 @@
         <p class="card-desc">Secure CLI password generator in Python with Have I Been Pwned breach checking via k-anonymity — only a hash prefix ever leaves the machine — plus customisable character sets and an auto-clearing clipboard.</p>
         <p class="card-stack">Python / HIBP / k-Anonymity / CLI</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" class="caps-link" aria-label="Password Generator source code on GitHub">View code</a>
-          <a href="https://securepassword-generator.streamlit.app" target="_blank" rel="noopener" class="caps-link" aria-label="Password Generator live demo">Live demo</a>
+          <a href="https://github.com/MetaMaaz/Password-Generator" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Password Generator on GitHub">View code</a>
+          <a href="https://securepassword-generator.streamlit.app" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="Live demo of Password Generator">Live demo</a>
         </div>
         <p class="card-code">MH07</p>
       </article>
@@ -226,7 +226,7 @@
         <p class="card-desc">Deploys a Grafana observability stack on Kubernetes using AWS CloudFormation for infrastructure provisioning.</p>
         <p class="card-stack">AWS / Kubernetes / Grafana / CloudFormation</p>
         <div class="card-links">
-          <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" class="caps-link" aria-label="Grafana on K8s with CloudFormation source code on GitHub">View code</a>
+          <a href="https://github.com/MetaMaaz/grafana-k8s-cloudformation" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link" aria-label="View code for Grafana on K8s with CloudFormation on GitHub">View code</a>
         </div>
         <p class="card-code">MH08</p>
       </article>
@@ -261,15 +261,15 @@
       <h2 class="sec-title">Certifications<span class="accent">.</span></h2>
     </div>
     <ul class="ledger reveal">
-      <li><a href="https://www.credly.com/badges/e0c2a5b1-88da-4420-9411-8f749e37037e/public_url" target="_blank" rel="noopener"><span class="ledger-code">ISC2 CC</span><span class="ledger-name">ISC2 Certified in Cybersecurity</span><span class="ledger-meta">ISC2</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://www.credly.com/badges/283ff9ea-4e9c-450a-ab4f-358818bde306/public_url" target="_blank" rel="noopener"><span class="ledger-code">GOOG</span><span class="ledger-name">Google Cybersecurity Professional Certificate</span><span class="ledger-meta">Google</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://www.credly.com/badges/ee2a7bd0-4865-430d-bad4-eddc5476cfeb/public_url" target="_blank" rel="noopener"><span class="ledger-code">SEC1</span><span class="ledger-name">Cyber Security 101</span><span class="ledger-meta">TryHackMe</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/1DA598E22A268BE?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-400</span><span class="ledger-name">DevOps Engineer Expert</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b20c1caec404b87bb987d5f6a3e70d3" target="_blank" rel="noopener"><span class="ledger-code">AWS SAA</span><span class="ledger-name">Solutions Architect – Associate</span><span class="ledger-meta">Amazon Web Services</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/A86EA9A9F679196E?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-104</span><span class="ledger-name">Azure Administrator</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4C031E4A9E79C876?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">DP-203</span><span class="ledger-name">Azure Data Engineer</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/BB05DFB998270A25?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">AZ-900</span><span class="ledger-name">Azure Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
-      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4B0FE66E430DE2D1?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener"><span class="ledger-code">DP-900</span><span class="ledger-name">Azure Data Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://www.credly.com/badges/e0c2a5b1-88da-4420-9411-8f749e37037e/public_url" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">ISC2 CC</span><span class="ledger-name">ISC2 Certified in Cybersecurity</span><span class="ledger-meta">ISC2</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://www.credly.com/badges/283ff9ea-4e9c-450a-ab4f-358818bde306/public_url" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">GOOG</span><span class="ledger-name">Google Cybersecurity Professional Certificate</span><span class="ledger-meta">Google</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://www.credly.com/badges/ee2a7bd0-4865-430d-bad4-eddc5476cfeb/public_url" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">SEC1</span><span class="ledger-name">Cyber Security 101</span><span class="ledger-meta">TryHackMe</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/1DA598E22A268BE?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">AZ-400</span><span class="ledger-name">DevOps Engineer Expert</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b20c1caec404b87bb987d5f6a3e70d3" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">AWS SAA</span><span class="ledger-name">Solutions Architect – Associate</span><span class="ledger-meta">Amazon Web Services</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/A86EA9A9F679196E?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">AZ-104</span><span class="ledger-name">Azure Administrator</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4C031E4A9E79C876?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">DP-203</span><span class="ledger-name">Azure Data Engineer</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/BB05DFB998270A25?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">AZ-900</span><span class="ledger-name">Azure Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/en-gb/maazhusain-3552/4B0FE66E430DE2D1?sharingId=CCE2282DD1258D5A" target="_blank" rel="noopener" aria-describedby="newtab"><span class="ledger-code">DP-900</span><span class="ledger-name">Azure Data Fundamentals</span><span class="ledger-meta">Microsoft</span><span class="ledger-view">View</span></a></li>
     </ul>
   </div>
 </section>
@@ -282,37 +282,37 @@
       <h2 class="sec-title">References<span class="accent">.</span></h2>
     </div>
     <div class="cards">
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Client · Jan 2026</p>
         <blockquote>He has great communication skills, and is thorough in troubleshooting the issues that come up in our system. He is reliable and does a consistently good job. I would highly recommend him!</blockquote>
         <p class="quote-name">Mickey (Mihaela) Conopask</p>
         <p class="quote-role">FCAS · 20+ years of experience</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Managed Maaz directly · Jan 2026</p>
         <blockquote>His work in validating/testing applications was top notch — I can always rely on his skills to deploy functionality with the highest quality. He was instrumental in creating automation plans and scripts for multiple applications. A great asset to any team he joins.</blockquote>
         <p class="quote-name">Ritesh Khemka</p>
         <p class="quote-role">Application Architect, Team Lead</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Managed Maaz directly · Dec 2025</p>
         <blockquote>Maaz single-handedly drove an entire application's testing across all aspects — database, functional, UI automation and API automation. He was excellent in client communication and built great rapport with the customer within months of joining, while mentoring juniors and taking on work outside his project. His work has been exemplary — a great addition to any team he joins.</blockquote>
         <p class="quote-name">Shobha M Devadiga</p>
         <p class="quote-role">Automation QA Architect · Project Manager</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Managed Maaz directly · Dec 2025</p>
         <blockquote>Maaz is a very hardworking and dependable QA professional, great at both functional and automation testing. He brings consistency and can always be trusted to deliver high-quality results. What really stands out is his eagerness to learn — always excited to pick up new skills. Helpful, supportive, and with a strong sense of ownership.</blockquote>
         <p class="quote-name">Shubham Chaudhari</p>
         <p class="quote-role">Specialist</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Managed Maaz directly · Dec 2025</p>
         <blockquote>Maaz has strong knowledge of automation, performance and manual testing. He's friendly by nature and helps others complete their work — straightforward, honest, and able to handle any kind of pressure while coordinating with the client.</blockquote>
         <p class="quote-name">Premkumar Thanikachlam</p>
         <p class="quote-role">Senior Specialist Software Engineer · LTIMindtree</p>
       </a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" class="card quote reveal">
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener" aria-describedby="newtab" class="card quote reveal">
         <p class="label">Worked with Maaz · Dec 2025</p>
         <blockquote>An excellent QA professional with strong attention to detail and a clear understanding of product quality. His dedication helped the team deliver reliable and high-quality releases.</blockquote>
         <p class="quote-name">Siddharth Gajbhiye</p>
@@ -334,7 +334,7 @@
       <li><div><span class="ledger-code">BE</span><span class="ledger-name">Information Technology</span><span class="ledger-meta">M.H. Saboo Siddik College of Engineering, Mumbai</span><span class="ledger-year">2016 – 2020</span></div></li>
     </ul>
 
-    <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" rel="noopener" class="pub reveal">
+    <a href="https://doi.org/10.1007/978-981-15-8443-5_42" target="_blank" rel="noopener" aria-describedby="newtab" class="pub reveal">
       <p class="label">Research · Springer 2020</p>
       <h3 class="pub-title">Stock Market Prediction using Machine Learning</h3>
       <p class="pub-venue">Intelligent Computing, Information and Control Systems · ICICCS 2020</p>
@@ -354,8 +354,8 @@
     </div>
     <div class="hero-links reveal">
       <a href="mailto:maazcdsa@gmail.com" class="caps-link">Email me</a>
-      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" class="caps-link">LinkedIn</a>
-      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" class="caps-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/maaz-husain-557a48166/" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link">LinkedIn</a>
+      <a href="https://github.com/MetaMaaz" target="_blank" rel="noopener" aria-describedby="newtab" class="caps-link">GitHub</a>
     </div>
   </div>
 </section>
@@ -369,6 +369,7 @@
   </div>
 </footer>
 
+<span id="newtab" hidden>Opens in a new tab</span>
 <script src="script.js" defer></script>
 </body>
 </html>

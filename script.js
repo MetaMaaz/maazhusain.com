@@ -2,7 +2,11 @@ const html = document.documentElement;
 
 // —— Theme toggle (initial theme is set inline in <head>) ——
 const themeBtn = document.getElementById('themeBtn');
-const label = () => { themeBtn.textContent = html.dataset.theme === 'light' ? 'Dark' : 'Light'; };
+const label = () => {
+  const next = html.dataset.theme === 'light' ? 'Dark' : 'Light';
+  themeBtn.textContent = next;
+  themeBtn.setAttribute('aria-label', `${next} theme`);   // keeps the visible word in the name (WCAG 2.5.3)
+};
 label();
 themeBtn.addEventListener('click', () => {
   html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
@@ -13,8 +17,10 @@ themeBtn.addEventListener('click', () => {
 // —— Full-screen menu ——
 const menuBtn = document.getElementById('menuBtn');
 const menu = document.getElementById('menu');
+const behind = document.querySelectorAll('main, .site-foot');
 const setMenu = open => {
   menu.hidden = !open;
+  behind.forEach(el => { el.inert = open; });   // keeps Tab and screen readers inside the open menu
   html.classList.toggle('menu-open', open);
   menuBtn.setAttribute('aria-expanded', open);
   menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
