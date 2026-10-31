@@ -8,7 +8,9 @@
   <!-- Set theme before first paint so a saved light preference doesn't flash dark.
        Must stay inline and above the stylesheets. try/catch: localStorage throws in some privacy modes. -->
   <script>try{if(localStorage.getItem('mh-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-  <!-- Self-hosted fonts: same origin, no third-party handshake. -->
+  <!-- Self-hosted fonts: same origin, no third-party handshake. Core subset is preloaded;
+       fonts/inter-ext.woff2 loads only if a page uses a Latin Extended-A letter. Built by tools/build-fonts.py -->
+  <link rel="preload" href="fonts/inter-core.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
 </head>

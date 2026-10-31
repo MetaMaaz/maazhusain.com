@@ -1,0 +1,172 @@
+#!/usr/bin/env python3
+"""Cut Inter down to what maazhusain.com uses. Run by hand; commit what it writes.
+
+    pip install fonttools brotli
+    python3 tools/build-fonts.py
+
+Reads   fonts/src/inter-latin.woff2, fonts/src/inter-latin-ext.woff2
+        (Google Fonts' Inter v4.001 latin / latin-ext subsets, variable wght 100-900)
+Writes  fonts/inter-core.woff2   preloaded; what the old latin file drew, minus unused glyphs
+        fonts/inter-ext.woff2    Latin Extended-A remainder; downloads only when a page uses it
+        fonts/fonts.css          @font-face rules with exact unicode-range and weight range
+
+The wght axis is cut to the nearest masters around the weights in use (100-400 today; the 900 master
+is dropped). See snap_to_masters() for why it isn't cut exactly at the lowest weight used.
+
+Rerun when:
+  - a font-weight outside the current range is used (the script reads them from style.css/index.html;
+    beware unstyled h1-h6/strong/b/th, which default to bold and are invisible to this scan)
+  - text gains characters outside ASCII, Latin-1, Latin Extended-A and ' ' " " - - ...
+  - CSS turns on an OpenType feature (font-feature-settings / font-variant-*) or hyphens: auto
+  - fonts/src is replaced (new Inter version)
+The script refuses to run on CSS it doesn't account for, rather than silently dropping glyphs.
+
+Why the split follows the old latin / latin-ext boundary instead of "ASCII + punctuation" core:
+kerning only applies inside one font file, so moving Latin-1 letters (é, ü, ñ) out of the core would
+unkern pairs like "Té" that the old single latin file kerned. Keeping the old boundary keeps rendering
+identical for any text. Measured alternative (Oct 2026): an ASCII + punctuation core is 17,280 B instead
+of 24,160 B, but accented text then renders differently (lost kerning shifts every glyph after "Té").
+"""
+import re, sys, html
+from html.parser import HTMLParser
+from pathlib import Path
+from fontTools.ttLib import TTFont
+from fontTools import subset
+from fontTools.varLib import instancer
+
+ROOT = Path(__file__).resolve().parent.parent
+FONTS = ROOT / 'fonts'
+PAGES = sorted(ROOT.glob('*.html'))
+CSS = [ROOT / 'style.css']
+JS = [ROOT / 'script.js']
+
+ASCII = set(range(0x20, 0x7F))
+LATIN1 = set(range(0xA0, 0x100))
+LATIN_EXT_A = set(range(0x100, 0x180))
+PUNCT = {0x2018, 0x2019, 0x201C, 0x201D, 0x2013, 0x2014, 0x2026}   # ' ' " " - - ...
+# Features browsers apply by default; the subsetter keeps whichever exist in the font.
+FEATURES = ['calt', 'ccmp', 'clig', 'kern', 'liga', 'locl', 'mark', 'mkmk', 'rlig', 'rvrn']
+
+
+class Text(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True); self.out, self.skip = [], 0
+    def handle_starttag(self, tag, attrs): self.skip += tag in ('script', 'style')
+    def handle_endtag(self, tag): self.skip -= tag in ('script', 'style')
+    def handle_data(self, d): self.out.append(d) if not self.skip else None
+
+
+def scan():
+    text, styles = [], []
+    for p in PAGES:
+        src = p.read_text(encoding='utf-8'); t = Text(); t.feed(src)
+        text += t.out; styles.append(src)                     # inline style="" attrs live in the HTML
+    for p in CSS:
+        css = p.read_text(encoding='utf-8'); styles.append(css)
+        for s in re.findall(r'content:\s*"((?:[^"\\]|\\.)*)"', css):
+            text.append(re.sub(r'\\([0-9a-fA-F]{1,6}) ?', lambda m: chr(int(m[1], 16)), s))
+    for p in JS:                                              # strings JS may write into the page
+        text += [a or b for a, b in re.findall(r"'([^'\n]*)'|\"([^\"\n]*)\"", p.read_text(encoding='utf-8'))]
+    s = html.unescape(''.join(text))
+    chars = {ord(c) for c in s + s.upper() + s.lower()}       # text-transform may change case
+    allstyle = '\n'.join(styles)
+
+    bad = [m for m in re.findall(r'(font-feature-settings|font-variant[\w-]*|font-variation-settings)\s*:\s*([^;}"]+)', allstyle)
+           if m[1].strip() not in ('normal', 'none')]
+    if bad: sys.exit(f'Features turned on in CSS, add them to FEATURES first: {bad}')
+    if re.search(r'hyphens\s*:\s*auto', allstyle): chars.add(0x2010)
+
+    names = {'normal': 400, 'bold': 700}
+    weights = set()
+    for v in re.findall(r'font-weight\s*:\s*([^;}"]+)', allstyle):
+        v = v.strip()
+        if v in ('lighter', 'bolder'): sys.exit('Relative font-weight found; resolve it to a number.')
+        weights.add(names.get(v) or int(v))
+    return chars, (min(weights), max(weights))
+
+
+def ranges(cps):
+    out, cps = [], sorted(cps)
+    for c in cps:
+        if out and c == out[-1][1] + 1: out[-1][1] = c
+        else: out.append([c, c])
+    return ', '.join(f'U+{a:04X}' if a == b else f'U+{a:04X}-{b:04X}' for a, b in out)
+
+
+def snap_to_masters(src, used):
+    """Widen the used weight range out to the nearest masters.
+
+    Inter's gvar only has masters at wght 100 and 900 around the 400 default. Cutting the axis
+    between masters (e.g. at 200) makes the instancer re-interpolate a new master and round it to
+    integer units: outlines drift by up to 0.8/2048 em. Keeping the 100 master costs no extra bytes
+    (one delta set either way) and keeps outlines bit-for-bit identical."""
+    f = TTFont(src)
+    ax = f['fvar'].axes[0]
+    peaks = {r[1] for g in f.getGlyphOrder() for v in f['gvar'].variations.get(g, []) for r in v.axes.values()}
+    assert peaks <= {-1.0, 1.0}, f'intermediate masters {peaks}: snap logic needs updating'
+    return (int(ax.minValue if used[0] < ax.defaultValue else ax.defaultValue),
+            int(ax.maxValue if used[1] > ax.defaultValue else ax.defaultValue))
+
+
+def build(src, keep, wght, dest):
+    f = TTFont(src)
+    opts = subset.Options()
+    opts.layout_features = FEATURES
+    opts.hinting = False                                      # drops prep (Inter ships no glyph programs)
+    s = subset.Subsetter(opts); s.populate(unicodes=keep); s.subset(f)
+    # Subset first: subsetting an instancer result fails on its lazily loaded gvar (fontTools 4.67).
+    f = instancer.instantiateVariableFont(f, {'wght': wght})   # drop deltas outside the used range
+    f.flavor = 'woff2'
+    f.recalcTimestamp = False                                 # keep source head.modified: reproducible output
+    f.save(dest)
+    # Check the result instead of trusting the tools.
+    g = TTFont(dest); cmap = set(g.getBestCmap())
+    assert cmap == keep, f'{dest.name}: cmap differs from request: {sorted(cmap ^ keep)}'
+    ax = g['fvar'].axes[0]
+    assert (ax.axisTag, ax.minValue, ax.defaultValue, ax.maxValue) == ('wght', wght[0], 400, wght[1]), (ax.minValue, ax.maxValue)
+    feats = {r.FeatureTag for t in ('GSUB', 'GPOS') if t in g for r in g[t].table.FeatureList.FeatureRecord}
+    assert feats <= set(FEATURES), feats
+    assert not {'prep', 'fpgm', 'cvt '} & set(g.keys())
+    print(f'{dest.name:18} {dest.stat().st_size:>6} B  {g["maxp"].numGlyphs:>3} glyphs  '
+          f'{len(cmap):>3} chars  wght {wght[0]}-{wght[1]}  {" ".join(sorted(feats))}')
+    return cmap
+
+
+def main():
+    used, wght = scan()
+    if not 100 <= wght[0] <= 400 <= wght[1] <= 900:
+        sys.exit(f'Weights {wght} must span 400 (Inter\'s default master) and sit within 100-900.')
+    print(f'font-weight used: {wght[0]}-{wght[1]}', end='')
+    wght = snap_to_masters(FONTS / 'src/inter-latin.woff2', wght)
+    print(f', axis kept: {wght[0]}-{wght[1]} (nearest masters)')
+    latin = set(TTFont(FONTS / 'src/inter-latin.woff2').getBestCmap())
+    ext = set(TTFont(FONTS / 'src/inter-latin-ext.woff2').getBestCmap())
+    want = ASCII | LATIN1 | LATIN_EXT_A | PUNCT | used
+    core = want & latin
+    extra = (want & ext) - core
+    missing = sorted(c for c in used - core - extra if c > 0x20)
+    if missing:   # same as before: these fall back to the system font
+        print('Not in Inter source, left to fallback fonts:', ' '.join(f'U+{c:04X}' for c in missing))
+
+    c = build(FONTS / 'src/inter-latin.woff2', core, wght, FONTS / 'inter-core.woff2')
+    e = build(FONTS / 'src/inter-latin-ext.woff2', extra, wght, FONTS / 'inter-ext.woff2')
+
+    face = lambda file, cps: f"""@font-face {{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: {wght[0]} {wght[1]};
+  font-display: swap;
+  src: url({file}) format('woff2');
+  unicode-range: {ranges(cps)};
+}}
+"""
+    (FONTS / 'fonts.css').write_text(
+        '/* Generated by tools/build-fonts.py from fonts/src. Do not edit; rerun the script. */\n'
+        + face('inter-ext.woff2', e) + face('inter-core.woff2', c))
+    for p in PAGES:
+        if 'fonts/inter-core.woff2' not in p.read_text(encoding='utf-8'):
+            print(f'warning: {p.name} does not preload fonts/inter-core.woff2')
+
+
+if __name__ == '__main__':
+    main()
