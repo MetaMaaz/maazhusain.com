@@ -27,8 +27,7 @@ Personal portfolio website for Maaz Husain — Cybersecurity Analyst & Senior Qu
 ├── _headers                 # HTTP security headers for Cloudflare Pages (CSP line generated)
 ├── _config.yml              # Lets Jekyll publish .well-known and _headers, and nothing else hidden
 ├── .github/workflows/       # Wake Streamlit demos every 6 h; check CSP hashes on every push
-├── tools/                   # Hand-run scripts, see below; tools/hooks has the pre-commit guard
-└── CNAME                    # Custom domain config for GitHub Pages
+└── tools/                   # Hand-run scripts, see below; tools/hooks has the pre-commit guard
 ```
 
 ## First time in a new clone
@@ -76,6 +75,7 @@ Each script's docstring has the details.
   Console TXT record live in Cloudflare DNS: keep them if you edit records.
 - Keep Cloudflare's **Email Address Obfuscation** off (Security settings / Scrape Shield): it rewrites
   the mailto link and injects a script, breaking the link without JavaScript.
+- GitHub Pages is unpublished and the repo has no `CNAME` file (that only configured GitHub Pages).
 - Grades on 31 Oct 2026: Mozilla Observatory A+ (135/100), securityheaders.com A+.
 
 ## Features
