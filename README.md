@@ -7,7 +7,7 @@ Personal portfolio website for Maaz Husain — Cybersecurity Analyst & Senior Qu
 ## Stack
 
 - HTML, CSS, JavaScript — no frameworks, no dependencies, no build step of its own
-- Hosted on GitHub Pages; ready for Cloudflare Pages (see below)
+- Hosted on Cloudflare Pages, deployed automatically on every push to `main` (see Hosting)
 
 ## Structure
 
@@ -65,17 +65,18 @@ Each script's docstring has the details.
   `https://threatlens-demo.onrender.com` every 5 minutes (one always-on service fits Render's 750 free
   hours a month, but not two), then delete the note next to its link.
 
-## Moving to Cloudflare Pages (for real security headers)
+## Hosting
 
-GitHub Pages can't send HTTP headers; Cloudflare Pages reads `_headers`. In the Cloudflare dashboard:
-Workers & Pages → Create → Pages → connect this repo, then
-
-- Build command: `gem install jekyll -v 4.4.1 --no-document && jekyll build`
-- Build output directory: `_site`
-
-This runs the same Jekyll build GitHub Pages does, so it publishes the same files (and `_headers`).
-Then add the custom domain `maazhusain.com` there; for a root domain Cloudflare asks you to move the
-domain's nameservers to Cloudflare at your registrar. Once it serves the site, turn off GitHub Pages.
+- **Cloudflare Pages** project `maazhusain-com` serves `maazhusain.com` and `www.maazhusain.com`
+  (preview: `maazhusain-com.pages.dev`). Every push to `main` builds with
+  `gem install jekyll -v 4.4.1 --no-document && jekyll build`, output `_site`: the same Jekyll build
+  GitHub Pages used, so it publishes the same files plus `_headers` (the security headers).
+- **DNS** is on Cloudflare (nameservers `marlowe`/`osmar.ns.cloudflare.com`); the domain is still
+  registered and renewed at **GoDaddy**. Mail records (GoDaddy MX, SPF, DMARC) and the Google Search
+  Console TXT record live in Cloudflare DNS: keep them if you edit records.
+- Keep Cloudflare's **Email Address Obfuscation** off (Security settings / Scrape Shield): it rewrites
+  the mailto link and injects a script, breaking the link without JavaScript.
+- Grades on 31 Oct 2026: Mozilla Observatory A+ (135/100), securityheaders.com A+.
 
 ## Features
 
