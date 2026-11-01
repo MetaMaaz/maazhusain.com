@@ -6,7 +6,7 @@
 
 Reads   fonts/src/inter-latin.woff2, fonts/src/inter-latin-ext.woff2
         (Google Fonts' Inter v4.001 latin / latin-ext subsets, variable wght 100-900)
-Writes  fonts/inter-core.woff2   preloaded; what the old latin file drew, minus unused glyphs
+Writes  fonts/inter-core.woff2   what the old latin file drew, minus unused glyphs (not preloaded: Safari double-fetched it)
         fonts/inter-ext.woff2    Latin Extended-A remainder; downloads only when a page uses it
         index.html <style>        @font-face rules (top of the inline CSS) with exact unicode-range and weight
                                  range; then reruns tools/update-csp.py because the CSS hash changes.
@@ -167,8 +167,6 @@ def main():
         page = p.read_text(encoding='utf-8')
         if not BLOCK.search(page): sys.exit(f'{p.name}: no generated @font-face block found in its <style>.')
         p.write_text(BLOCK.sub(lambda _: block, page), encoding='utf-8')
-        if '/fonts/inter-core.woff2" as="font"' not in page:
-            print(f'warning: {p.name} does not preload /fonts/inter-core.woff2')
     # The block sits inside each page's hashed <style>, so the CSP hashes must follow.
     subprocess.run([sys.executable, str(ROOT / 'tools/update-csp.py')], check=True, stdout=subprocess.DEVNULL)
 
