@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Must come before any script or stylesheet. Generated hashes: edit via tools/update-csp.py -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-zPmoPdO5fAM75NtfbvdD6NoQslv2wjZ+xmj+JDYdgnU='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-9nvv4NdRfXMqIHMD5dDpS8rmkDHFa/4EOpKzHYuSKsw='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
@@ -93,6 +93,7 @@ a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 strong { font-weight: 400; color: var(--ink-hi); }
 :focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+[tabindex="-1"]:focus { outline: none; }   /* sections focused by script.js after an in-page link */
 
 .accent { color: var(--accent); }
 .label {

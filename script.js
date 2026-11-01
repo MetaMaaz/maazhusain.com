@@ -29,6 +29,21 @@ menuBtn.addEventListener('click', () => setMenu(menu.hidden));
 menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
 
+// —— In-page links: scroll without adding #section to the address bar ——
+// Runs after the menu link's own handler (which closes the menu and un-inerts the page).
+// Without JS the links still work as plain #anchors.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  const target = document.getElementById(a.getAttribute('href').slice(1));
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView();                                  // follows CSS scroll-behavior, so reduced motion is respected
+  if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });                    // keyboard and screen-reader users continue from the section
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+});
+
 // —— Reveal on scroll ——
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
