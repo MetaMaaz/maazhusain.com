@@ -17,7 +17,7 @@ Personal portfolio website for Maaz Husain — Cybersecurity Analyst & Senior Qu
 │                            # serves the homepage with 200 for every unknown URL)
 ├── script.js                # Theme toggle, full-screen menu, scroll reveal
 ├── fonts/
-│   ├── inter-core.woff2     # Preloaded subset (generated)
+│   ├── inter-core.woff2     # Core subset, not preloaded (Safari double-fetched it) (generated)
 │   ├── inter-ext.woff2      # Latin Extended-A, loads only when used (generated)
 │   └── src/                 # Inter source files the subsets are cut from
 ├── og-image.png             # Link-preview card (generated)

@@ -30,9 +30,9 @@
        and apply a saved light theme so it doesn't flash dark. Must stay inline and above the <style> block.
        try/catch: localStorage throws in some privacy modes. Editing this changes its CSP hash: run tools/update-csp.py -->
   <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('mh-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
-  <!-- Self-hosted fonts: same origin, no third-party handshake. Core subset is preloaded;
-       fonts/inter-ext.woff2 loads only if a page uses a Latin Extended-A letter. Built by tools/build-fonts.py -->
-  <link rel="preload" href="/fonts/inter-core.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- Self-hosted fonts: same origin, no third-party handshake. Deliberately NOT preloaded: Safari ignored the
+       preload and downloaded fonts/inter-core.woff2 twice. fonts/inter-ext.woff2 loads only if a page uses a
+       Latin Extended-A letter. Built by tools/build-fonts.py -->
   <!-- All CSS is inline: no render-blocking stylesheet request. Its CSP hash is generated, so after ANY edit
        to this block run tools/update-csp.py (the pre-commit hook in tools/hooks refuses a stale hash). -->
   <style>
