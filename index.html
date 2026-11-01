@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Must come before any script or stylesheet. Generated hashes: edit via tools/update-csp.py -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-UOlGJhUmaARycCaRIa44YQ5FLZNMKnX50BsT7yAzgI0='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-3UmJLzcOeusichKZAm6Y7ywnqqJgWaCIsgkSWu/WEzA='; style-src 'sha256-zPmoPdO5fAM75NtfbvdD6NoQslv2wjZ+xmj+JDYdgnU='; font-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maaz Husain – Cybersecurity Analyst</title>
@@ -193,27 +193,12 @@ section { padding: clamp(5rem, 11vw, 9rem) 0 0; }
 
 /* —— Hero —— */
 .hero { padding-top: clamp(9rem, 18vh, 12rem); }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  column-gap: 2rem;
-}
+.hero-grid { display: grid; }
 .display {
   font-size: clamp(3.4rem, 10.5vw, 8.4rem);
   font-weight: 300;
   line-height: 1.02;
   letter-spacing: -0.035em;
-  color: var(--ink);
-}
-.hero .display { grid-column: 1; }
-.vertical {
-  grid-column: 2; grid-row: 1;
-  align-self: end;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.3;
   color: var(--ink);
 }
 .intro {
@@ -398,7 +383,6 @@ section { padding: clamp(5rem, 11vw, 9rem) 0 0; }
 /* —— Mobile —— */
 @media (max-width: 760px) {
   .site-head { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .vertical { display: none; }
   .intro { grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2.5rem; }
   .stats { gap: 2rem; }
   .exp, .index-row { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -461,7 +445,6 @@ section { padding: clamp(5rem, 11vw, 9rem) 0 0; }
 <section class="hero">
   <div class="wrap hero-grid">
     <h1 class="display reveal">Secure by<br /><span class="accent">Design.</span></h1>
-    <p class="vertical" aria-hidden="true">Cybersecurity<br />2020—Now</p>
 
     <div class="intro reveal">
       <p>Senior Quality Engineer transitioning into cybersecurity. 5+ years delivering secure, cloud-native applications at enterprise scale.</p>
