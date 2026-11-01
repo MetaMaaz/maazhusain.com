@@ -75,6 +75,10 @@ Each script's docstring has the details.
   Console TXT record live in Cloudflare DNS: keep them if you edit records.
 - Keep Cloudflare's **Email Address Obfuscation** off (Security settings / Scrape Shield): it rewrites
   the mailto link and injects a script, breaking the link without JavaScript.
+- Keep the Configuration Rule **"Disable RUM beacon"** (Rules → Configuration Rules; all requests:
+  Disable RUM, Disable Zaraz). Without it the Free plan injects the Web Analytics beacon
+  (static.cloudflareinsights.com) into every HTML response, which the CSP blocks with console errors.
+  Traffic analytics in the dashboard are unaffected.
 - GitHub Pages is unpublished and the repo has no `CNAME` file (that only configured GitHub Pages).
 - Grades on 31 Oct 2026: Mozilla Observatory A+ (135/100), securityheaders.com A+.
 
